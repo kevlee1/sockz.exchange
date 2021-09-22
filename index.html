@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <title>TOADZ SOCKZ</title>
+
+  </head>
+
+  <body>
+
+    <div class="banner">
+      <div class="board">
+
+
+        <div class="boardXXLwrap">
+
+          <div class="sides">
+            <div class="boardXXLL">
+
+              <img src="assets/images/banner/board-xxl-l.svg">
+
+              <div class="logo">
+                <img src="assets/images/banner/masthead-logo.svg">
+              </div>
+
+            </div>
+
+            <div class="boardXXLR">
+
+              <img src="assets/images/banner/board-xxl-r.svg">
+
+              <div class="bannerButtons">
+
+                <div class="redeem">
+
+                  <div class="redeembck">
+                    <img src="assets/images/banner/redeem.png">
+                    <img src="assets/images/banner/redeemfirey.png">
+                  </div>
+
+                  <div class="redeemTxt noselect">
+
+                    <div class="fire">
+                      <img src="assets/images/banner/fire.png">
+                    </div>
+                    <div class="redeemedNum">6969 Redeemed</div>
+
+                  </div>
+
+                  <div class="redeemTxtHover noselect">9999 Sockz Left</div>
+
+                </div>
+
+                <!-- not connected yet -->
+
+                <div class="connect" onclick="connectWallet()">
+
+                  <div class="connectbck">
+                    <img src="assets/images/banner/connect.png">
+                    <img src="assets/images/banner/connectHover.png">
+                  </div>
+
+                  <div class="connectTxt noselect">Connect</div>
+
+                </div>
+
+                <!-- Connected! -->
+
+                <div class="connected" onclick="disconnectWallet()">
+
+                  <div class="connectedbck">
+                    <img src="assets/images/banner/connected.png">
+                    <img src="assets/images/banner/connectedhover.png">
+                  </div>
+
+                  <div class="connectedTxt noselect">0xdDAbBJFD</div>
+
+                </div>
+
+                <div class="questions" onclick="moreinfo()">
+                  <img src="assets/images/banner/questions.svg">
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="xxlMidBoard">
+            <img class="boardXXLM" src="assets/images/banner/board-xxl-m.svg">
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+
+    <!-- background -->
+
+        <!-- Dithering -->
+
+
+      <div class="background">
+
+        <div class="ditherTop">
+          <img src="assets/images/bkgrd/dither-top.svg">
+        </div>
+        <div class="ditherBottom">
+          <img src="assets/images/bkgrd/dither-bottom.svg">
+        </div>
+
+
+        <div class="clouds">
+          <div class="cloudleft">
+            <img src="assets/images/bkgrd/cloud-l.svg">
+          </div>
+          <div class="cloudright">
+            <img src="assets/images/bkgrd/cloud-r.svg">
+          </div>
+        </div>
+
+        <!-- orange arrow -->
+        <div class="bkrgdArrow">
+          <img src="assets/images/bkgrd/bkarrow.svg">
+        </div>
+
+        <!-- frogs -->
+        <div class="brainyfrog">
+          <img src="assets/images/bkgrd/brainy.svg">
+        </div>
+
+        <div class="smokey">
+          <img src="assets/images/bkgrd/smokey.svg">
+        </div>
+
+        <!-- weeds -->
+        <div class="weedleft">
+          <img src="assets/images/bkgrd/weed-l.svg">
+        </div>
+        <div class="weedright">
+          <img src="assets/images/bkgrd/weed-r.svg">
+        </div>
+
+        <!-- background skull -->
+          <div class="skullybgrd">
+            <img src="assets/images/bkgrd/skull-bgrd.svg">
+        </div>
+
+        <!-- talking skull -->
+        <div class="skullyWrap">
+
+          <div class="skullyWraptxt">
+            <img class="skullytxt" src="assets/images/bkgrd/skull/apein.png">
+          </div>
+
+          <img class="skully" src="assets/images/bkgrd/skully.svg">
+
+        </div>
+
+        <!-- bubbles -->
+
+        <div class="bubbles">
+
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble1.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble2.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble3.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble1.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble2.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble3.png">
+
+        </div>
+
+      </div>
+
+    <!-- MODAL -->
+
+      <div class="modalWrap">
+
+        <div class="sock">
+
+          <div class="sockboard">
+            <img src="assets/images/modal/sockbgrd.png">
+            <div class="dddsock">
+              <img src="assets/images/modal/3Dsock.png">
+            </div>
+          </div>
+
+
+
+          <div class="sockCountDown">
+            <div class="dH1 noselect" style="padding-bottom:10px;">($Toadz)</div>
+            <div class="dH2 noselect" style="text-align: center;font-size:24px;color:#aaa9a7;">12/1000</div>
+          </div>
+
+          <div class="currentPrice">
+            <div class="dH2 noselect" style="font-size:15px; text-align: center;color:#aaa9a7;letter-spacing: 1px;">Current Price</div>
+            <div class="dH1 noselect">100 ETH</div>
+          </div>
+
+          <div class="editInfoWrap">
+
+            <div class="editInfo noselect">
+              <div class="" style="color:white;padding-bottom:3px">ToadzSockz Edition 0</div>
+              <div class="">Buy and sell real socks with digital currency. Delivered on demand.</div>
+            </div>
+              <!-- <div class="moreinfo"></div> -->
+            <!-- <div class="learnmore">
+              <div class="learnmorebutton">Learn More</div>
+              <img src="assets/images/banner/questions.svg" style="height:20px;padding-left:10px;">
+            </div> -->
+          </div>
+
+        </div>
+
+
+        <div class="buysockz">
+          <img src="assets/images/modal/buynow.png">
+          <img id="buyhover" src="assets/images/modal/buynowhover.png">
+          <div class="buyNowTxt noselect" onclick="showBuyModal()">Buy Sockz</div>
+        </div>
+
+        <!-- Doesn't own sock, use display:none and display:flex to change states -->
+
+        <div class="sellredeemDisabled">
+          <div class="sell">
+            <div class="selltxt">Sell</div>
+            <img src="assets/images/modal/sellredeem.svg">
+          </div>
+          <div class="redeeming">
+            <div class="selltxt">Redeem</div>
+            <img src="assets/images/modal/sellredeem.svg">
+          </div>
+        </div>
+
+        <!-- Owns sock -->
+
+        <div class="sellredeem">
+          <div class="sell" onclick="console.log('SELL lFG')">
+            <div class="selltxt">Sell</div>
+            <img id="sellowns" src="assets/images/modal/sellOwns.png">
+            <img id="sellownshover" src="assets/images/modal/sellOwnsHover.png">
+          </div>
+          <div class="redeeming" onclick="console.log('REDEEM LFG')">
+            <div class="selltxt">Redeem</div>
+            <img id="redeemowns" src="assets/images/modal/redeemOwns.png" >
+            <img id="redeemownshover" src="assets/images/modal/redeemOwnsHover.png" >
+          </div>
+        </div>
+
+
+        <div class="fox">
+          <img src="assets/images/bkgrd/fox.png">
+        </div>
+
+      </div>
+
+      <!-- BUYING MODAL-->
+
+      <div class="buyModalWrap">
+
+        <!-- bubbles -->
+
+        <div class="buybubbles">
+
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble1.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble2.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble3.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble1.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble2.png">
+          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble3.png">
+
+        </div>
+
+
+        <div class="buyModal">
+
+          <div class="sock">
+
+            <div class="sockboard">
+
+              <!-- if buying display -->
+              <img id="buySockPanel" src="assets/images/modal/buyingBack.png">
+              <!-- if bought display-->
+              <img id="boughtSockPanel" src="assets/images/modal/boughtBack.png">
+
+            </div>
+
+            <div class="buycurrentPrice">
+              <div class="dH2 noselect" style="font-size:15px; text-align: center;color:#aaa9a7;letter-spacing: 1px;">Current Price</div>
+              <div class="dH1 noselect">100 ETH</div>
+            </div>
+
+            <div class="incrementWrap">
+
+              <!-- <img src="assets/images/modal/sockzcount.png"> -->
+
+              <div class="incrementTxt noselect">
+
+                <div class="minus" onclick="minusone()">-</div>
+                <div class="incrementValue">1</div>
+                <div class="plus" onclick="addone()">+</div>
+
+              </div>
+
+              <div class="incrementCount">12/6969 Left</div>
+
+            </div>
+
+            <div class="buyeditInfoWrap">
+              <div class="editInfo noselect">
+                <div class="" style="color:white;padding-bottom:3px">ToadzSockz Edition 0</div>
+                <div class="">Buying sockz now pls</div>
+              </div>
+            </div>
+
+            <div class="boughteditInfoWrap">
+              <div class="editInfo noselect">
+                <div class="" style="color:white;padding-bottom:3px">ToadzSockz Edition 0</div>
+                <div class="">Bought sockz thx</div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <div class="buyingsockz" onclick="buyingSockz()">
+            <img src="assets/images/modal/buynow.png">
+            <img id="buyhover" src="assets/images/modal/buynowhover.png">
+            <div class="buyNowTxt noselect">Buy Sockz</div>
+          </div>
+
+          <!-- SHILL + OPENSEA -->
+
+          <div class="shillopensea">
+            <div class="sell">
+              <div class="shillOstxt">Shill</div>
+              <img src="assets/images/modal/shill.png">
+            </div>
+            <div class="redeeming">
+              <div class="shillOstxt">Opensea</div>
+              <img src="assets/images/modal/opensea.png">
+            </div>
+          </div>
+
+        </div>
+
+          <!-- bought background -->
+
+          <div class="boughtBackground">
+            <div class="complimentToad">
+              <img class="thxtoad" src="assets/images/modal/skelleton.png">
+              <img class="thxtoad" src="assets/images/modal/sickfrogz.png">
+            </div>
+
+            <!-- frogs -->
+            <div class="brainyfrog">
+              <img src="assets/images/bkgrd/brainy.svg">
+            </div>
+
+            <div class="smokey">
+              <img src="assets/images/bkgrd/smokey.svg">
+            </div>
+
+            <!-- clouds -->
+            <div class="clouds">
+              <div class="cloudleft">
+                <img src="assets/images/bkgrd/cloud-l.svg">
+              </div>
+              <div class="cloudright">
+                <img src="assets/images/bkgrd/cloud-r.svg">
+              </div>
+            </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="infoModalWrap">
+        <div class="infotransition">
+
+          <div class="infomodal">
+            <img src="assets/images/modal/infoBack.png">
+            <div class="goback">
+              <img class="infobckbutton" src="assets/images/modal/goback.png">
+            </div>
+
+            <div class="infoText">
+              <div class="infoParagraph">
+                <div class="infoTitle">What Are ToadzSockz?
+                </div>
+                <div class="infoBody">
+                  $SOCKS is a token that entitles you to 1 real pair of limited edition socks, shipped anywhere in the world.
+                  <br>
+                  You can sell the token back at any time. To get a real pair, redeem a $SOCKS token,
+                </div>
+              </div>
+
+              <div class="infoParagraph">
+                <div class="infoTitle">How It Works:
+                </div>
+                <div class="infoBody">
+                  $SOCKS is a token that entitles you to 1 real pair of limited edition socks, shipped anywhere in the world.
+                  <br>
+                  You can sell the token back at any time. To get a real pair, redeem a $SOCKS token,
+                </div>
+              </div>
+
+              <div class="infoParagraph">
+                <div class="infoTitle">But Ser: (Why)
+                </div>
+                <div class="infoBody">
+                  $SOCKS is a token that entitles you to 1 real pair of limited edition socks, shipped anywhere in the world.
+                  <br>
+                  You can sell the token back at any time. To get a real pair, redeem a $SOCKS token,
+                </div>
+              </div>
+
+              <div class="infoParagraph">
+                <div class="infoTitle">
+                  Colophon:
+                </div>
+                <div class="infoBody">
+                  Based on art by Gremplin <br>
+                  Sockz design / Website design: Mackody<br>
+                  Website Frontend: Papaya <br>
+                  Website Backend: Klee or whatever... <br>
+                  Contract: Klee or whatever... <br>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="infoButtons">
+
+              <div class="buybuy">
+                <div class="buysockzinfo">
+                  <img src="assets/images/modal/buynow.png">
+                  <img id="buyhover" src="assets/images/modal/buynowhover.png">
+                  <div class="buyNowTxt noselect" onclick="showBuyModal()">Buy Sockz</div>
+                </div>
+
+              </div>
+
+              <div class="twitterOS">
+
+                  <div class="sell">
+                    <div class="selltxt">Twitter</div>
+                    <img src="assets/images/modal/shill.png">
+                  </div>
+
+                  <div class="redeeming">
+                    <div class="selltxt">Opensea</div>
+                    <img src="assets/images/modal/opensea.png">
+                  </div>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <script type="text/javascript" src="assets/js/main.js"></script>
+
+  </body>
+
+</html>
