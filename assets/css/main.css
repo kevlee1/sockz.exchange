@@ -1484,7 +1484,7 @@ body{
 			.boardXXLR{
 				margin-top: 0px;
 			}
-			@media all and (max-width: 380px) and (min-height: 320px){
+			@media all and (max-width: 420px) and (min-height: 320px){
 				.sockboard img{
 					width: 100%
 				}
