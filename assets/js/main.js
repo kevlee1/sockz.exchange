@@ -58,6 +58,17 @@ ismobile();
   }
   function showError(){
     errorMessageWrap.style.display = "block"
+    errorMessageWrap.style.marginLeft = "0px"
+
+    setTimeout(function () {
+      errorMessageWrap.style.marginLeft = "-490px"
+
+      setTimeout(function () {
+        errorMessageWrap.style.display = "none"
+      }, 1000);
+
+    }, 3000);
+
   }
 
   // Show Buy modal
