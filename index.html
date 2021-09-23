@@ -24,12 +24,8 @@
             <div class="boardXXLL">
 
               <div class="leftBoardWrap">
-                <img src="assets/images/banner/board-xxl-l.png" style="float: left">
+                <img class="mobileBoard" src="assets/images/banner/board-xxl-l.png" style="float: left">
                 <img class="leftgoo" src="assets/images/banner/leftgoo.png">
-              </div>
-
-              <div class="logo">
-                <img src="assets/images/banner/masthead-logo.svg">
               </div>
 
             </div>
@@ -37,63 +33,11 @@
             <div class="boardXXLR">
 
               <div class="rightBoardWrap">
-              <img src="assets/images/banner/board-xxl-r.png" style="float: right">
+              <img class="mobileBoard" src="assets/images/banner/board-xxl-r.png" style="float: right">
               <img class="rightgoo" src="assets/images/banner/rightgoo.png">
             </div>
 
-              <div class="bannerButtons">
 
-                <div class="redeem">
-
-                  <div class="redeembck">
-                    <img src="assets/images/banner/redeem.png">
-                    <img src="assets/images/banner/redeemfirey.png">
-                  </div>
-
-                  <div class="redeemTxt noselect">
-
-                    <div class="fire">
-                      <img src="assets/images/banner/fire.png">
-                    </div>
-                    <div class="redeemedNum">6969 Redeemed</div>
-
-                  </div>
-
-                  <div class="redeemTxtHover noselect">9999 Sockz Left</div>
-
-                </div>
-
-                <!-- not connected yet -->
-
-                <div class="connect" onclick="connectWallet()">
-
-                  <div class="connectbck">
-                    <img src="assets/images/banner/connect.png">
-                    <img src="assets/images/banner/connectHover.png">
-                  </div>
-
-                  <div class="connectTxt noselect">Connect</div>
-
-                </div>
-
-                <!-- Connected! -->
-
-                <div class="connected" onclick="disconnectWallet()">
-
-                  <div class="connectedbck">
-                    <img src="assets/images/banner/connected.png">
-                    <img src="assets/images/banner/connectedhover.png">
-                  </div>
-
-                  <div class="connectedTxt noselect">0xdDAbBJFD</div>
-
-                </div>
-
-                <div class="questions" onclick="moreinfo()">
-                  <img src="assets/images/banner/questions.svg">
-                </div>
-
-              </div>
 
             </div>
 
@@ -109,6 +53,71 @@
 
 
       </div>
+    </div>
+
+    <div class="logo">
+      <img class="mobileLogo" src="assets/images/banner/masthead-logo.svg">
+    </div>
+
+    <div class="burger">
+      <img src="assets/images/banner/burger.png">
+    </div>
+
+    <!-- Banner Buttons -->
+
+    <div class="bannerButtons">
+
+      <div class="redeem">
+
+        <div class="redeembck">
+          <img src="assets/images/banner/redeem.png">
+          <img src="assets/images/banner/redeemfirey.png">
+        </div>
+
+        <div class="redeemTxt noselect">
+
+          <div class="fire">
+            <img src="assets/images/banner/fire.png">
+          </div>
+          <div class="redeemedNum">6969 Redeemed</div>
+
+        </div>
+
+        <div class="redeemTxtHover noselect">9999 Sockz Left</div>
+
+      </div>
+
+
+      <!-- not connected yet -->
+
+      <div class="connect" onclick="connectWallet()">
+
+        <div class="connectbck">
+          <img src="assets/images/banner/connect.png">
+          <img src="assets/images/banner/connectHover.png">
+        </div>
+
+        <div class="connectTxt noselect">Connect</div>
+
+      </div>
+
+      <!-- Connected! -->
+
+      <div class="connected" onclick="disconnectWallet()">
+
+        <div class="connectedbck">
+          <img src="assets/images/banner/connected.png">
+          <img src="assets/images/banner/connectedhover.png">
+        </div>
+
+        <div class="connectedTxt noselect">0xdDAbBJFD</div>
+
+      </div>
+
+      <div class="questions" onclick="moreinfo()">
+        <img src="assets/images/banner/questions.svg">
+      </div>
+
     </div>
 
     <!-- background -->
@@ -426,9 +435,8 @@
 
           </div>
 
-
           <div class="buyingsockz" onclick="buyingSockz()">
-            <img src="assets/images/modal/buynow.png">
+            <img class"buynowMobile" src="assets/images/modal/buynow.png">
             <img id="buyhover" src="assets/images/modal/buynowhover.png">
             <div class="buyNowTxt noselect">Connect Wallet</div>
           </div>
@@ -547,7 +555,7 @@ You can transfer, sell, or trade the NFT anytime on a variety of platforms. To r
 
               <div class="buybuy">
                 <div class="buysockzinfo">
-                  <img src="assets/images/modal/buynow.png">
+                  <img class"buynowMobile" src="assets/images/modal/buynow.png">
                   <img id="buyhover" src="assets/images/modal/buynowhover.png">
                   <div class="buyNowTxt noselect" onclick="showBuyModal()">Buy Sockz</div>
                 </div>

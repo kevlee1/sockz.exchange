@@ -84,7 +84,7 @@ ismobile();
 
   function showBuyModal(){
 
-    buymodalWrap.style.display = "block";
+    buymodalWrap.style.display = "flex";
     regmodalWrap.style.display = "none";
 
     bubbles.style.display = "none";
@@ -113,10 +113,10 @@ ismobile();
 
    if (event.target == buymodalWrap || event.target.className == "bubble" || event.target.className == "thxtoad") {
 
-     buymodal.style.marginTop = "920px";
+     // buymodal.style.marginTop = "920px";
 
      setTimeout(function () {
-       regmodalWrap.style.display = "block";
+       regmodalWrap.style.display = "flex";
 
      }, 400);
      setTimeout(function () {

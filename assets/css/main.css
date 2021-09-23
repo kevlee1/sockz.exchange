@@ -199,7 +199,7 @@ body{
 	}
 	.logo{
 		position: absolute;
-		top: 23px;
+		top: 53px;
 		left: 100px;
 		z-index: 30;
 	}
@@ -225,6 +225,11 @@ body{
 			left:0;
 		}
 		.boardXXLR{
+			position:absolute;
+			right:0;
+			z-index: 1;
+		}
+		.bannerButtons{
 			position:absolute;
 			right:0;
 			z-index: 1;
@@ -274,9 +279,9 @@ body{
 		.bannerButtons{
 			position: absolute;
 			display: flex;
-			top: 34px;
+			top: 62px;
 	    right: 72px;
-	    z-index: 30;
+	    z-index: 20;
 		}
 		.bannerButtons div{
 			padding-left:5px
@@ -677,6 +682,11 @@ body{
 					z-index: 40
 				}
 
+				/* mobile burger */
+
+				.burger{
+					display:none
+				}
 				/* background bubbles */
 
 				.bubbles{
@@ -783,6 +793,7 @@ body{
 					/* height: calc(100vh - 200px);
 					width: calc(100vw - 727px);
 					max-width: 524px; */
+					height: 560px;
 				}
 				.paybadge{
 					position:absolute;
@@ -842,10 +853,10 @@ body{
 						bottom: -46px;
 						justify-content: center;
 						/* height: 20%; */
-						width: 100%;
+						/* width: 100%; */
 						cursor:pointer;
 						height:88px;
-						width:100%;
+						/* width:100%; */
 
 						/* background-color: beige; */
 						bottom: 42px;
@@ -1475,7 +1486,7 @@ body{
 			}
 			@media all and (max-width: 380px) and (min-height: 320px){
 				.sockboard img{
-					width: 70%
+					width: 100%
 				}
 				.sockCountDown {
 				    top: 41px;
@@ -1566,13 +1577,16 @@ body{
 					display:none;
 				}
 				.cloudleft img{
-					width: 165px;
+					width: 115px;
 				}
 				.cloudright img{
-					width: 240px;
+					width: 150px;
 				}
 				.buyModal{
 					/* top:40% */
+				}
+				.weedleft, .weedright{
+					display:none
 				}
 
 				.buyingsockz{
@@ -1608,4 +1622,90 @@ body{
 				display: flex;
 				justify-content: center;
 			}
+			.mobileBoard{
+				height:100px
 			}
+			.mobileLogo{
+				height:50px
+			}
+			.bannerButtons{
+				display:none
+			}
+			.logo{
+		    top: 20px;
+		    left: 51px;
+			}
+			.leftgoo {
+				display:none
+			}
+			.rightgoo{
+				right: 47%;
+				top: 32px;
+				width: 100px;
+			}
+			.modalWrap{
+				top: 50%;
+				transform: translate(-50%, calc(-50% - 100px));
+			}
+			.smokey{
+				display:none
+			}
+			.bkrgdArrow{
+				display:none
+			}
+			.sockCountDown{
+				top: 52%;
+				right: 22%;
+			}
+			.currentPrice{
+				top: 6%;
+				right: 23%;
+			}
+			.editInfoWrap {
+		    top: 65%;
+			}
+			.burger{
+				display:block;
+				position: absolute;
+				top: 31px;
+				right: 43px;
+				z-index: 20;
+				cursor:pointer;
+			}
+			.burger img{
+				width:40px;
+			}
+			.sellredeemDisabled img{
+				height:40px
+			}
+			.sellredeem img{
+				height:40px
+			}
+			.buynowMobile{
+				height:70%
+			}
+			.editInfoWrap{
+				padding:0 0 0 2px;
+				top:74%
+			}
+			.sellredeemDisabled{
+				padding: 0 53px;
+				bottom: 37px;
+				display:none
+			}
+			.sellredeem{
+				display: flex;
+
+				padding: 0 53px;
+				bottom: 37px;
+			}
+			.sellredeem{
+				padding: 0 53px;
+				bottom: 37px;
+			}
+			.selltxt{
+				width:123px;
+				top:2px;
+			}
+
+		}
