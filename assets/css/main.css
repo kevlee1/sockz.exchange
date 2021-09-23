@@ -1345,7 +1345,7 @@ body{
 
 			.infoButtons{
 				position:absolute;
-				bottom: 100px;
+				bottom: 123px;
 				left: 61px;
 			}
 			.buybuy{
@@ -1495,11 +1495,7 @@ body{
 				.logo {
 				    left: calc(50vw - 69px);
 				}
-				.currentPrice{
-					top: 324px;
-					color: beige;
-					right: 45px;
-				}
+
 				.editInfoWrap{
 					top: 63%;
 					margin: 0 50px;
@@ -1510,9 +1506,7 @@ body{
 				.brownBoardTxt{
 					/* font-size:20px */
 				}
-				.currentPrice{
 
-				}
 				.currentPricetxt{
 					font-size:14px;
 				}
@@ -1536,6 +1530,8 @@ body{
 				}
 				.modalWrap{
 					margin-top: 130px;
+					max-width: 100%;
+					height:unset;
 				}
 				.buyNowTxt{
 					text-align: center;
@@ -1577,10 +1573,12 @@ body{
 					display:none;
 				}
 				.cloudleft img{
-					width: 115px;
+					display:none;
+					/* width: 115px; */
 				}
 				.cloudright img{
-					width: 150px;
+					display:none;
+					/* width: 150px; */
 				}
 				.buyModal{
 					/* top:40% */
@@ -1645,7 +1643,7 @@ body{
 			}
 			.modalWrap{
 				top: 50%;
-				transform: translate(-50%, calc(-50% - 100px));
+				transform: translate(-50%, calc(-50% - 60px));
 			}
 			.smokey{
 				display:none
@@ -1654,16 +1652,15 @@ body{
 				display:none
 			}
 			.sockCountDown{
-				top: 52%;
-				right: 22%;
+				top: 53%;
+		    right: 10%;
 			}
 			.currentPrice{
+				color: beige;
 				top: 6%;
-				right: 23%;
+				right: 10%;
 			}
-			.editInfoWrap {
-		    top: 65%;
-			}
+
 			.burger{
 				display:block;
 				position: absolute;
@@ -1686,7 +1683,7 @@ body{
 			}
 			.editInfoWrap{
 				padding:0 0 0 2px;
-				top:74%
+				top:66%
 			}
 			.sellredeemDisabled{
 				padding: 0 53px;

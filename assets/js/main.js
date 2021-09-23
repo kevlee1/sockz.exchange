@@ -181,7 +181,7 @@ ismobile();
     boughtSockPanel.style.display = "block";
 
     incrementWrap.style.display = "none";
-    buycurrentPrice.style.display = "none";
+    // buycurrentPrice.style.display = "none";
 
     buyeditInfoWrap.style.display = "none";
     boughteditInfoWrap.style.display = "block";
