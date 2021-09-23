@@ -1098,7 +1098,7 @@ body{
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
-						top: 607px;
+						top: 612px;
 						color: #E5E3E0;
 						width: 100%;
 					}
@@ -1317,7 +1317,7 @@ body{
 				flex-direction: column;
 				height: 740px;
 				justify-content: space-between;
-				top: 80px;
+				top: 90px;
 				left: 85px;
 				color:white;
 				word-wrap: break-word
