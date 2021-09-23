@@ -1533,9 +1533,15 @@ body{
 					max-width: 100%;
 					height:unset;
 				}
+				.buyModalWrap{
+					margin-top: 130px;
+					max-width: 100%;
+					height:unset;
+				}
+
 				.buyNowTxt{
 					text-align: center;
-					margin: 0 130px;
+					/* margin: 0 130px; */
 					white-space: nowrap;
 					/* background: black; */
 					bottom: 13px;
@@ -1642,6 +1648,10 @@ body{
 				width: 100px;
 			}
 			.modalWrap{
+				top: 50%;
+				transform: translate(-50%, calc(-50% - 60px));
+			}
+			.buyModalWrap{
 				top: 50%;
 				transform: translate(-50%, calc(-50% - 60px));
 			}
