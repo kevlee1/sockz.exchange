@@ -23,7 +23,10 @@
           <div class="sides">
             <div class="boardXXLL">
 
-              <img src="assets/images/banner/board-xxl-l.svg">
+              <div class="leftBoardWrap">
+                <img src="assets/images/banner/board-xxl-l.png" style="float: left">
+                <img class="leftgoo" src="assets/images/banner/leftgoo.png">
+              </div>
 
               <div class="logo">
                 <img src="assets/images/banner/masthead-logo.svg">
@@ -33,7 +36,10 @@
 
             <div class="boardXXLR">
 
-              <img src="assets/images/banner/board-xxl-r.svg">
+              <div class="rightBoardWrap">
+              <img src="assets/images/banner/board-xxl-r.png" style="float: right">
+              <img class="rightgoo" src="assets/images/banner/rightgoo.png">
+            </div>
 
               <div class="bannerButtons">
 
@@ -160,7 +166,7 @@
         <div class="skullyWrap">
 
           <div class="skullyWraptxt">
-            <img class="skullytxt" src="assets/images/bkgrd/skull/apein.png">
+            <img class="skullytxt" src="assets/images/bkgrd/skull/GM.svg">
           </div>
 
           <img class="skully" src="assets/images/bkgrd/skully.svg">
@@ -182,9 +188,104 @@
 
       </div>
 
+    <!-- Wallet modal -->
+
+    <div class="walletModalWrap">
+
+      <div class="walletConnBoard">
+        <img src="assets/images/wallet/walletmodal.png">
+
+        <div class="backWallet">
+          <img class="walletBackButton" src="assets/images/modal/goback.png">
+        </div>
+
+
+        <div class="wallettxt">
+
+          <div class="infoWallet">
+            <div class="connectWallTxt">Connect your wallet</div>
+
+            <div class="line">
+              <img src="assets/images/wallet/line.png">
+            </div>
+
+            <div class="walletButton" onclick="showError()">
+              <img src="assets/images/wallet/smallboard.png">
+              <div class="walletButtTxt shortboard">
+                MetaMask
+              </div>
+            </div>
+
+            <div class="line">
+              <img src="assets/images/wallet/line.png">
+            </div>
+
+            <div class="walletButton" onclick="showError()">
+              <img src="assets/images/wallet/largeboard.png">
+              <div class="walletButtTxt longboard">
+                Wallet Connect
+              </div>
+            </div>
+
+            <div class="line">
+              <img src="assets/images/wallet/line.png">
+            </div>
+
+            <div class="walletButton" onclick="showError()">
+              <img src="assets/images/wallet/largeboard.png">
+              <div class="walletButtTxt longboard">
+                Browser Wallet
+              </div>
+            </div>
+
+            <div class="line">
+              <img src="assets/images/wallet/line.png">
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- error messages -->
+    <div class="errorMessageWrap noselect">
+      <div class="errorBack" onclick="closeError()">
+        <img src="assets/images/wallet/errorBack.png">
+      </div>
+
+      <div class="errorBoard">
+        <img class="errorImg" src="assets/images/wallet/message.png">
+        <!-- <div class="errorMessage">
+          <div class="errorTitle">
+            Error: XXXX
+          </div>
+          <div class="errorText">
+            Failed to connect to your wallet.
+          </div>
+        </div> -->
+
+        <div class="errorMessage">
+          <div class="errorTitle">
+            Success: XXXX
+          </div>
+          <div class="errorText">
+            You've successfully connected to your wallet.
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
     <!-- MODAL -->
 
-      <div class="modalWrap">
+      <!-- <div class="modalWrap">
 
         <div class="sock">
 
@@ -213,23 +314,17 @@
               <div class="" style="color:white;padding-bottom:3px">ToadzSockz Edition 0</div>
               <div class="">Buy and sell real socks with digital currency. Delivered on demand.</div>
             </div>
-              <!-- <div class="moreinfo"></div> -->
-            <!-- <div class="learnmore">
-              <div class="learnmorebutton">Learn More</div>
-              <img src="assets/images/banner/questions.svg" style="height:20px;padding-left:10px;">
-            </div> -->
+
           </div>
 
         </div>
 
 
-        <div class="buysockz">
+        <div class="buysockz" onclick="showBuyModal()">
           <img src="assets/images/modal/buynow.png">
           <img id="buyhover" src="assets/images/modal/buynowhover.png">
-          <div class="buyNowTxt noselect" onclick="showBuyModal()">Buy Sockz</div>
+          <div class="buyNowTxt noselect" >Buy Sockz</div>
         </div>
-
-        <!-- Doesn't own sock, use display:none and display:flex to change states -->
 
         <div class="sellredeemDisabled">
           <div class="sell">
@@ -241,8 +336,6 @@
             <img src="assets/images/modal/sellredeem.svg">
           </div>
         </div>
-
-        <!-- Owns sock -->
 
         <div class="sellredeem">
           <div class="sell" onclick="console.log('SELL lFG')">
@@ -262,7 +355,81 @@
           <img src="assets/images/bkgrd/fox.png">
         </div>
 
-      </div>
+      </div> -->
+
+      <!-- Test mobil wrap -->
+
+        <div class="modalWrap">
+
+          <div class="sock">
+
+            <div class="sockboard">
+              <img src="assets/images/modal/sockbgrd.png">
+            </div>
+
+
+
+            <div class="sockCountDown">
+              <div class="tickerTxt noselect">($Toadz)</div>
+              <div class="countDownTxt noselect" style="text-align: center;font-size:24px;color:#aaa9a7;">6969/6969</div>
+            </div>
+
+            <div class="currentPrice">
+              <div class="currentPriceTxt dH2 noselect">Current Price</div>
+              <div class="priceTxt noselect">100 ETH</div>
+            </div>
+
+            <div class="editInfoWrap">
+
+              <div class="editInfo noselect">
+                <div class="" style="color:white;padding-bottom:3px">ToadzSockz Edition 0</div>
+                <div class="brownBoardTxt">Buy and sell real socks with digital currency. Delivered on demand.</div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="buysockz" onclick="showBuyModal()">
+            <img src="assets/images/modal/buynow.png">
+            <img id="buyhover" src="assets/images/modal/buynowhover.png">
+            <div class="buyNowTxt noselect" >Get Sockz</div>
+          </div>
+
+          <div class="sellredeemDisabled">
+            <div class="sell">
+              <div class="selltxt">Sell</div>
+
+              <a href="https://opensea.io" target="_blank">
+              <img src="assets/images/modal/sellredeem.svg">
+              </a>
+            </div>
+            <div class="redeeming">
+              <div class="selltxt">Redeem</div>
+              <img src="assets/images/modal/sellredeem.svg">
+            </div>
+          </div>
+
+          <div class="sellredeem">
+            <div class="sell" onclick="console.log('SELL lFG')">
+              <div class="selltxt">Sell</div>
+              <img id="sellowns" src="assets/images/modal/sellOwns.png">
+              <img id="sellownshover" src="assets/images/modal/sellOwnsHover.png">
+            </div>
+            <div class="redeeming" onclick="console.log('REDEEM LFG')">
+              <div class="selltxt">Redeem</div>
+              <img id="redeemowns" src="assets/images/modal/redeemOwns.png" >
+              <img id="redeemownshover" src="assets/images/modal/redeemOwnsHover.png" >
+            </div>
+          </div>
+
+
+          <div class="fox">
+            <img src="assets/images/bkgrd/fox.png">
+          </div>
+
+        </div>
 
       <!-- BUYING MODAL-->
 
@@ -345,11 +512,15 @@
           <div class="shillopensea">
             <div class="sell">
               <div class="shillOstxt">Shill</div>
-              <img src="assets/images/modal/shill.png">
+              <a href="https://twitter.com/sockzDAO" target="_blank">
+                <img src="assets/images/modal/shill.png">
+              </a>
             </div>
             <div class="redeeming">
               <div class="shillOstxt">Opensea</div>
-              <img src="assets/images/modal/opensea.png">
+              <a href="https://twitter.com/sockz_exchange" target="_blank">
+                <img src="assets/images/modal/opensea.png">
+              </a>
             </div>
           </div>
 

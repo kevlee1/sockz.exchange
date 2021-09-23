@@ -196,6 +196,9 @@ body{
 		width:100%;
 		position:relative;
 		padding: 30px 30px 0 30px;
+		max-width:100%;
+		max-height:100%;
+
 	}
 	.logo{
 		position: absolute;
@@ -228,17 +231,7 @@ body{
 			position:absolute;
 			right:0;
 			z-index: 1;
-		}
-
-		.leftgoo{
-	    position: absolute;
-	    z-index: 20;
-	    left: 20vw;
-		}
-		.rightgoo{
-			position: absolute;
-			right: 80%;
-			top: 67px;
+			margin-top: -1px;
 		}
 
 		/* Temporary measure because mid is too long */
@@ -543,138 +536,6 @@ body{
 					z-index: 6
 				}
 
-				/* Wallet modal */
-
-				.walletModalWrap{
-					position: fixed;
-					display: none;
-					height:100%;
-					width:100%;
-					background-color:rgb(7, 20, 37,0.9);
-					z-index: 35
-				}
-				.walletConnBoard{
-					position: absolute;
-					/* display:none; */
-					left: 50%;
-					top: 50%;
-					transform: translate(-50%, -50%);
-				}
-
-				.wallettxt{
-					position: absolute;
-					display: flex;
-					flex-direction: column;
-					height: 290px;
-					justify-content: space-between;
-					top: 63px;
-					left: 85px;
-					color:white;
-					word-wrap: break-word;
-					/* background-color: pink; */
-
-					/* height: 100%;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between; */
-
-				}
-
-				.infowallet{
-					/* height:160px;
-					width:456px; */
-					/* background-color:	pink */
-					font-family: 'Comic Neue';
-					height: 360px;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
-					font-size:36px;
-					/* background-color: pink; */
-
-
-				}
-				.walletButton{
-			    margin-top: 17px;
-			    cursor: pointer;
-			    width: 56%;
-			    height: 60px;
-			    /* background: aliceblue; */
-
-				}
-				.walletButton:hover .walletButtTxt{
-					opacity:.5
-				}
-				.walletButton img{
-					position: absolute;
-				}
-				.connectWallTxt{
-					font-size: 24px;
-					font-family: 'Comic Neue';
-					padding-bottom: 8px;
-				}
-				.infoWallet div{
-					/* padding-bottom:40px */
-				}
-				.walletButtTxt{
-					position: relative;
-					top: 9px;
-					left: 13px;
-					font-size: 28px;
-					/* background-color: blue; */
-					text-align: center;
-					height: 10px;
-				}
-
-				.shortboard{
-					width: 140px;
-				}
-				.longboard{
-					width: 216px;
-				}
-				.backWallet{
-					position: absolute;
-					top: -20px;
-					right: -16px;
-					cursor:pointer;
-				}
-				.backWallet:hover{
-					transform:rotate(8deg)
-				}
-
-				/* error messages */
-				.errorMessageWrap{
-					position: absolute;
-					display:none;
-					width: 406px;
-					padding:30px 0 0 30px;
-					z-index: 60;
-
-				}
-
-				.errorMessage{
-					position: relative;
-			    top: -131px;
-			    left: 8px;
-			    width: 290px;
-			    color: white;
-			    font-family: 'Comic Neue';
-			    font-size: 18px;
-			    margin: 30px 0;
-			    width: 400px;
-			    padding: 0px 80px;
-
-				}
-				.errorMessage div{
-					text-align: center;
-				}
-				.errorBack{
-					position: absolute;
-					top: 44px;
-					right: -15px;
-					cursor:pointer;
-					z-index: 40
-				}
 
 				/* background bubbles */
 
@@ -777,11 +638,12 @@ body{
 			    left: 50%;
 			    top: 0;
 			    transform: translate(-50%, 0);
-			    /* background-color: blue; */
+			    /* background-color: pink; */
 			    margin-top: 160px;
 					/* height: calc(100vh - 200px);
-					width: calc(100vw - 727px);
+					width: calc(100vw - f727px);
 					max-width: 524px; */
+					height: 823px;
 				}
 				.paybadge{
 					position:absolute;
@@ -803,7 +665,9 @@ body{
 					}
 
 					.sockboard{
-						height:100%;
+						/* height:697px;
+						width:526px; */
+						/* background: beige */
 					}
 
 					.modalWrap:hover .fox{
@@ -812,8 +676,9 @@ body{
 
 
 					.sock{
-						/* height:100%; */
-						/* background-color:blue; */
+						max-width: 100%;
+						max-height: 100%;
+						position: relative;
 					}
 
 					.dddsock{
@@ -832,6 +697,8 @@ body{
 						top: 477px;
 						color: beige;
 						right: 75px;
+						background-color:beige;
+
 					}
 					/* buy socks */
 
@@ -846,16 +713,26 @@ body{
 						height:88px;
 						width:100%;
 
-						/* background-color: beige; */
-						bottom: 42px;
+						/* background-color: blue; */
+						bottom: 5.4%;
 						position: relative;
 					}
 
 					.sockCountDown{
-						position: absolute;
+						/* position: absolute;
 						top: 60px;
 						right: 70px;
-						color:beige
+						color:beige;
+						background: pink; */
+
+						position: absolute;
+						top: 5%;
+						right: 11%;
+						color: beige;
+						background: pink;
+						padding: 17px 0px;
+						  display: inline-block;
+
 					}
 
 							/* buy now hover */
@@ -1195,15 +1072,14 @@ body{
 					} */
 					.sellredeemDisabled{
 						display: flex;
-						justify-content: space-between;
-						width: 100%;
-						padding: 0 73px;
-						position: relative;
-						bottom: 42px;
-						cursor:default;
-						color:grey;
-					  pointer-events: none;
-						/* background-color:magenta; */
+				    justify-content: space-between;
+				    width: 100%;
+				    padding: 0 73px;
+				    position: relative;
+				    bottom: 2.8%;
+				    cursor: default;
+				    color: grey;
+				    background-color: magenta;
 					}
 					.sellredeem{
 						display: none;
@@ -1211,7 +1087,7 @@ body{
 						width: 100%;
 						padding: 0 73px;
 						position: relative;
-						bottom: 42px;
+						bottom: 2.8%;
 						cursor:default;
 						color:white;
 						cursor:pointer;
@@ -1270,9 +1146,6 @@ body{
 				background-color:rgb(7, 20, 37,0.9);
 
 
-			}
-			.infobckbutton:hover{
-				transform:rotate(4deg)
 			}
 			.infotransition{
 				position: relative;
@@ -1392,7 +1265,6 @@ body{
 				opacity:0.5;
 			}
 
-
 			.leftBoardWrap{
 				/* background-color:pink; */
 				width:100%;
@@ -1402,32 +1274,6 @@ body{
 				/* background-color:blue; */
 				width:100%;
 				overflow: hidden;
-			}
-
-			/* to move up */
-			.currentPriceTxt{
-				font-size:15px;
-				text-align: center;
-				color:#aaa9a7;
-				letter-spacing: 1px;
-			}
-			.tickerTxt{
-				font-family: 'Comic Neue';
-				font-weight: regular;
-				font-size: 32px;
-				letter-spacing: 1px;
-				padding-bottom:2px;
-				text-align: center;
-			}
-			.countDownTxt{
-				font-family: 'Comic Neue';
-				font-weight: Regular;
-				font-size: 24px;
-			}
-			.priceTxt{
-				font-family: 'Comic Neue';
-				font-size: 28px;
-
 			}
 
 		@media only screen and (max-width: 1800px) {
@@ -1444,11 +1290,11 @@ body{
 							/* width:20%; */
 							display:none
 						}
-						/* .sockboard img{
+						.sockboard img{
 							max-height: 100%;
 							max-width: 100%;
 							min-width: 360px;
-						} */
+						}
 
 		}
 		@media only screen and (max-width: 1200px) {
@@ -1471,140 +1317,4 @@ body{
 			}
 			.boardXXLR{
 				margin-top: 0px;
-			}
-			@media all and (max-width: 380px) and (min-height: 320px){
-				.sockboard img{
-					width: 70%
-				}
-				.sockCountDown {
-				    top: 41px;
-				    right: 39px;
-				}
-				.logo {
-				    left: calc(50vw - 69px);
-				}
-				.currentPrice{
-					top: 324px;
-					color: beige;
-					right: 45px;
-				}
-				.editInfoWrap{
-					top: 63%;
-					margin: 0 50px;
-				}
-				.editInfo{
-					font-size:14px
-				}
-				.brownBoardTxt{
-					/* font-size:20px */
-				}
-				.currentPrice{
-
-				}
-				.currentPricetxt{
-					font-size:14px;
-				}
-				.priceTxt{
-					font-size:25px;
-					font-family: 'Comic Neue';
-					font-weight: regular;
-					letter-spacing: 1px;
-
-				}
-				.tickerTxt{
-					font-size: 21px;
-					padding: 0;
-
-				}
-				.countDownTxt{
-					font-size: 25px;
-				}
-				.board{
-					padding:10px 10px 0 10px;
-				}
-				.modalWrap{
-					margin-top: 130px;
-				}
-				.buyNowTxt{
-					text-align: center;
-					margin: 0 130px;
-					white-space: nowrap;
-					/* background: black; */
-					bottom: 13px;
-					font-size: 29px;
-				}
-				#buyhover{
-					display:none;
-				}
-				/* cancel hover image change */
-
-				.buysockz{
-					padding: 0 27px;
-					height: 100%;
-					width: 100%;
-					bottom:33px
-				}
-				.buysockz img:nth-child(1){
-					display:block;
-					max-width: 316px;
-					max-height: 100%;
-				}
-
-				.buysockz img:nth-child(2){
-					display: none;
-				}
-
-				.buysockz:hover img:nth-child(1){
-					display:block
-				}
-
-				.buysockz:hover img:nth-child(2){
-					display:none;
-				}
-				.bubbles{
-					display:none;
-				}
-				.cloudleft img{
-					width: 165px;
-				}
-				.cloudright img{
-					width: 240px;
-				}
-				.buyModal{
-					/* top:40% */
-				}
-
-				.buyingsockz{
-					display: block;
-					width: 100%;
-					height: 100%;
-					background: aliceblue;
-					display: flex;
-					bottom: 120px;
-				}
-
-
-				.buyingsockz img:nth-child(1){
-					display:block
-				}
-
-				.buyingsockz:hover img:nth-child(1){
-					display:block
-				}
-
-				.buyingsockz:hover img:nth-child(2){
-					display:none;
-				}
-
-				.buyingsockz img{
-					width:320px
-				}
-
-				.fox{
-					display:none;
-				}
-			.sockboard{
-				display: flex;
-				justify-content: center;
-			}
 			}

@@ -1,3 +1,20 @@
+// Is mobile?
+
+function ismobile() {
+  let isMobile = window.matchMedia("only screen and (max-width: 740px)").matches;
+
+  if (isMobile) {
+      console.log("is mobile")
+  }
+}
+
+ismobile();
+
+// IF is mobile
+// make imgs
+// max-height: 100%;
+// max-width: 100%;
+
   // Connect wallet
 
   var connect = document.getElementsByClassName('connect')[0];
@@ -6,8 +23,14 @@
   var sellredeem = document.getElementsByClassName('sellredeem')[0];
   var disableSellRedeem = document.getElementsByClassName('sellredeemDisabled')[0];
 
+  var walletModalWrap = document.getElementsByClassName('walletModalWrap')[0];
+  var errorMessageWrap = document.getElementsByClassName('errorMessageWrap')[0];
+
   function connectWallet(){
 
+      walletModalWrap.style.display = "block";
+
+    // once connected these become available
     connect.style.display = "none";
     connected.style.display = "block";
 
@@ -26,6 +49,15 @@
     sellredeem.style.display = "none";
     disableSellRedeem.style.display = "flex";
 
+  }
+
+  // Close error messages
+
+  function closeError(){
+    errorMessageWrap.style.display = "none"
+  }
+  function showError(){
+    errorMessageWrap.style.display = "block"
   }
 
   // Show Buy modal
@@ -66,7 +98,8 @@
   window.onclick = function(event) {
 
   // Close Buy Modal if clicked outside of it
-  
+    // console.log(event.target);
+
    if (event.target == buymodalWrap || event.target.className == "bubble" || event.target.className == "thxtoad") {
 
      buymodal.style.marginTop = "920px";
@@ -102,6 +135,10 @@
      infoModalWrap.style.display = "none";
      infotransition.style.marginTop = "1560px"
      background.style.display = "block";
+
+   } else if (event.target.className == "walletModalWrap" || event.target.className == "walletBackButton"){
+
+     walletModalWrap.style.display = "none";
 
    }
 
