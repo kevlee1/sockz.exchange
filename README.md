@@ -28,6 +28,7 @@ The backend uses Ether JS and Hardhat to manage interact with the smart contract
 Whenever we have a failed transaction due to user error, it could be helpful to have a warning that fits the theme of the website
 Whenever people are inputting their toadIds to mint their sock, it is a very plain/boring prompt that pops up. could be fun to have something that is more in line with the website.
 Could be nice to have an indicator stating that you can't redeem NFT sockz for an irl one yet. Maybe a soon™ button or something hehe
+VERY SMALL: could be nice to have either a sock or toad favicon :)
 
 
 ## Backend Improvements
