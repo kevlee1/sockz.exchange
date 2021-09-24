@@ -25,24 +25,24 @@ The backend uses Ether JS and Hardhat to manage interact with the smart contract
 
 ## Frontend Improvements
 
-Whenever we have a failed transaction due to user error, it could be helpful to have a warning that fits the theme of the website
-Whenever people are inputting their toadIds to mint their sock, it is a very plain/boring prompt that pops up. could be fun to have something that is more in line with the website.
-Could be nice to have an indicator stating that you can't redeem NFT sockz for an irl one yet. Maybe a soon™ button or something hehe
-VERY SMALL: could be nice to have either a sock or toad favicon :)
+- Whenever we have a failed transaction due to user error, it could be helpful to have a warning that fits the theme of the website
+- Whenever people are inputting their toadIds to mint their sock, it is a very plain/boring prompt that pops up. could be fun to have something that is more in line with the website.
+- Could be nice to have an indicator stating that you can't redeem NFT sockz for an irl one yet. Maybe a soon™ button or something hehe
+- VERY SMALL: could be nice to have either a sock or toad favicon :)
 
 
 ## Backend Improvements
 
-BUG: if you try to buy without connecting a wallet, the button to connect a wallet in the middle of the screen is not connected to anything yet.
-BUG: all the supply/redeemed numbers need to be fixed
-BUG: can only connect with MM
-When OS is fully set up and running, replace "current price" with the floor
+- BUG: if you try to buy without connecting a wallet, the button to connect a wallet in the middle of the screen is not connected to anything yet.
+- BUG: all the supply/redeemed numbers need to be fixed
+- BUG: can only connect with MM
+- When OS is fully set up and running, replace "current price" with the floor
 
 ## General Questions
 
-Let's all do one more passthrough of all the text and buttons to make sure they all make sense (i think that we have some unneccesary buttons like "sell") (also the supply/redeemed count that looks like a button in the top row)
-What is browser wallet (when you go to connect)? should we remove it? (might be more front end work)
-Right now, the mint count doesn't really do anything. I basically just have it set if you want to just mint one toad (mintCount == 1) and if you want to mint multiple toadz at once (mintCount > 1). should we clean that up and just make it mint vs multimint. (might be more front end work)
+- Let's all do one more passthrough of all the text and buttons to make sure they all make sense (i think that we have some unneccesary buttons like "sell") (also the supply/redeemed count that looks like a button in the top row)
+- What is browser wallet (when you go to connect)? should we remove it? (might be more front end work)
+- Right now, the mint count doesn't really do anything. I basically just have it set if you want to just mint one toad (mintCount == 1) and if you want to mint multiple toadz at once (mintCount > 1). should we clean that up and just make it mint vs multimint. (might be more front end work)
 
 ## Credits
 
