@@ -1,3 +1,8 @@
+import { ethers } from "ethers";
+import Sockz from '../../src/artifacts/contracts/toadSockz.sol/Sockz.json' assert { type: "json" };
+// Update with actual contract address
+const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+
 // Is mobile?
 
 function ismobile() {
@@ -25,10 +30,19 @@ ismobile();
 
   var walletModalWrap = document.getElementsByClassName('walletModalWrap')[0];
   var errorMessageWrap = document.getElementsByClassName('errorMessageWrap')[0];
+  var signer;
 
-  function connectWallet(){
+  async function requestAccount() {
+    await window.ethereum.request({ method: 'eth_requestAccounts' });
+  }
 
-      walletModalWrap.style.display = "block";
+  async function connectWallet(){
+
+    await requestAccount();
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    signer = provider.getSigner()
+
+    walletModalWrap.style.display = "block";
 
     // once connected these become available
     connect.style.display = "none";
