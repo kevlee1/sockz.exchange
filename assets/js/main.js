@@ -1,7 +1,7 @@
-import { ethers } from "ethers";
-import Sockz from '../../src/artifacts/contracts/toadSockz.sol/Sockz.json' assert { type: "json" };
+//import { ethers } from 'ethers';
+import Sockz from '../../src/util/sockzAbi.json' assert { type: "json" };
 // Update with actual contract address
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+const contractAddress = "0x1Ba0F92c9290611d19AE2B2B837994d489704D7d"
 
 // Is mobile?
 
@@ -31,16 +31,15 @@ ismobile();
   var walletModalWrap = document.getElementsByClassName('walletModalWrap')[0];
   var errorMessageWrap = document.getElementsByClassName('errorMessageWrap')[0];
   var signer;
+  var provider;
+  var address;
+  var isConnected = false;
 
-  async function requestAccount() {
+  async function requestMetaMask() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
   }
 
-  async function connectWallet(){
-
-    await requestAccount();
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    signer = provider.getSigner()
+  function connectToWallet(){
 
     walletModalWrap.style.display = "block";
 
@@ -53,6 +52,33 @@ ismobile();
 
   }
 
+  document.getElementsByClassName("connect")[0].addEventListener('click', connectToWallet);
+
+  async function connectMetaMask(){
+    await window.ethereum.request({ method: 'eth_requestAccounts' });
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    signer = provider.getSigner();
+    walletModalWrap.style.display = "none";
+    address = await signer.getAddress();
+    document.getElementById("address").innerHTML = address;
+    document.getElementById("mintingNow").innerHTML = "Mint Sockz";
+    isConnected = true;
+  }
+
+  document.getElementById("metaMask").addEventListener('click', connectMetaMask);
+
+  async function connectWalletConnect(){
+    const webProvider = new WalletConnectProvider({
+      infuraId: "27e484dcd9e3efcfd25a83a78777cdf1",
+    });
+    await webProvider.enable();
+    provider = new webProvider.Web3Provider(webProvider);
+    signer = provider.getSigner();
+    walletModalWrap.style.display = "none";
+  }
+
+  document.getElementById("walletConnect").addEventListener('click', connectWalletConnect);
+
   // Disconnect wallet
 
   function disconnectWallet(){
@@ -62,8 +88,11 @@ ismobile();
 
     sellredeem.style.display = "none";
     disableSellRedeem.style.display = "flex";
-
+    document.getElementById("mintingNow").innerHTML = "Connect Wallet";
+    isConnected = false;
   }
+
+  document.getElementsByClassName("connected")[0].addEventListener('click', disconnectWallet);
 
   // Close error messages
 
@@ -117,6 +146,9 @@ ismobile();
     background.style.display = "block";
 
   }
+
+  document.getElementsByClassName("buysockz")[0].addEventListener('click', showBuyModal);
+  document.getElementById("infoBuy").addEventListener('click', showBuyModal);
 
   // Hide Buy modal
 
@@ -186,23 +218,6 @@ ismobile();
   var buyeditInfoWrap = document.getElementsByClassName('buyeditInfoWrap')[0];
   var boughteditInfoWrap = document.getElementsByClassName('boughteditInfoWrap')[0];
 
-  function buyingSockz(){
-
-    buybutton.style.display = "none";
-    shillopensea.style.display = "flex";
-
-    buySockPanel.style.display = "none";
-    boughtSockPanel.style.display = "block";
-
-    incrementWrap.style.display = "none";
-    // buycurrentPrice.style.display = "none";
-
-    buyeditInfoWrap.style.display = "none";
-    boughteditInfoWrap.style.display = "block";
-
-    boughtBackground.style.display = "block";
-
-  }
   // Talking skull
 
   const textList = ["aiyvn.svg", "butser.svg", "citadel.svg", "GM.svg", "GN.svg", "nicejpg.svg", "rare.svg", "SER.svg", "sweepfloor.svg", "time2ape.svg", "toadz.svg", "utility.svg"];
@@ -236,6 +251,8 @@ ismobile();
 
   }
 
+  document.getElementsByClassName("plus")[0].addEventListener('click', addone);
+
   function minusone(){
     var currentNum = incrementValue.innerText;
 
@@ -244,6 +261,50 @@ ismobile();
       incrementValue.innerText = currentNum;
     }
   }
+
+  document.getElementsByClassName("minus")[0].addEventListener('click', minusone);
+
+  async function buyingSockz(){
+
+    if (isConnected) {
+      if (incrementValue.innerText > 1) {
+        var lot = prompt("Please enter the list of toadIds you would like to mint from: ", "1,2,3,...");
+        var toadIds = lot.split(',').map(Number);
+        console.log(toadIds);
+        const contract = new ethers.Contract(contractAddress, Sockz, signer);
+        const transaction = await contract.multiMintWithToad(toadIds);
+        await transaction.wait();
+      }
+      else if (incrementValue.innerText == 1) {
+        var toadId = prompt("Please enter the toadId you would like to mint from: ", "toadId");
+        var toadInt = Number(toadId);
+        console.log(toadInt);
+        const contract = new ethers.Contract(contractAddress, Sockz, signer);
+        const transaction = await contract.mintWithToad(toadInt);
+        await transaction.wait();
+      }
+      else {
+        window.alert("please choose how many sockz you would like to mint");
+      }
+    }
+
+    buybutton.style.display = "none";
+    shillopensea.style.display = "flex";
+
+    buySockPanel.style.display = "none";
+    boughtSockPanel.style.display = "block";
+
+    incrementWrap.style.display = "none";
+    buycurrentPrice.style.display = "none";
+
+    buyeditInfoWrap.style.display = "none";
+    boughteditInfoWrap.style.display = "block";
+
+    boughtBackground.style.display = "block";
+
+  }
+
+  document.getElementsByClassName("buyingsockz")[0].addEventListener('click', buyingSockz);
 
   // info modal
   var infotransition = document.getElementsByClassName('infotransition')[0];
@@ -260,3 +321,5 @@ ismobile();
         background.style.display = "none";
 
   }
+  console.log( document.getElementsByClassName("questions")[0]);
+  document.getElementsByClassName("questions")[0].addEventListener('click', moreinfo);

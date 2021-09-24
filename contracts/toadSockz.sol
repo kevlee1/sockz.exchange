@@ -1,5 +1,3 @@
-// CREDIT TO UXT
-
 pragma solidity >=0.6.0 <0.8.0;
 
 /*
@@ -1343,16 +1341,6 @@ library Strings {
 pragma solidity >=0.6.0 <0.8.0;
 
 
-
-
-
-
-
-
-
-
-
-
 /**
  * @title ERC721 Non-Fungible Token Standard basic implementation
  * @dev see https://eips.ethereum.org/EIPS/eip-721
@@ -1948,12 +1936,12 @@ abstract contract ReentrancyGuard {
 
 
 
-//File: contracts/sockzExchange.sol
+//File: contracts/Sockz.sol
 
 pragma solidity ^0.7.0;
 
 
-interface nftInterface {
+interface ToadInterface {
     function ownerOf(uint256 tokenId) external view returns (address owner);
 }
 
@@ -1969,31 +1957,18 @@ contract Sockz is ERC721, ReentrancyGuard, Ownable {
 
     bool public mintIsActive = false;
     bool public claimIsActive = false;
-    // TODO: change tokenPrice
-    uint256 public tokenPrice = 0;
 
-    //Parent NFT Contract
-    //mainnet address
-	//address public nftAddress = 0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6;
-	//rinkeby address
-	address public nftAddress = 0x70BC4cCb9bC9eF1B7E9dc465a38EEbc5d73740FB;
-    nftInterface nftContract = nftInterface(nftAddress);
+    //toad Contract
+    //mainnet
+	//address public toadAddress = 0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6;
+	//rinkeby
+	address public toadAddress = 0x70BC4cCb9bC9eF1B7E9dc465a38EEbc5d73740FB;
+    ToadInterface toadContract = ToadInterface(toadAddress);
 
     function tokenURI(uint256 tokenId) override public view returns (string memory) {
-		string memory baseURI = _baseURI();
-		//sockz are fungible so they can all use the same metadata here.
-		//implemented as an erc721 to integrate with services and to better represent a digital object
-        // TODO: change tokenHash to tokenhash for ipfs
-		string memory tokenHash = "QmPwJJuTJ73ApreQ91vsrUSQzw9PXhA5UUSgDSTgEN4aYH";
-		return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, tokenHash)) : "";
-
+		string memory baseURI = baseURI();
+		return bytes(baseURI).length > 0 ? string(baseURI) : "ipfs://QmZy7iynDnJhS9DxPKXPoydsuTJYghAUDhBW4cBoAwybFx";
     }
-    
-	 function _baseURI() internal view virtual returns (string memory) {
-		return "ipfs://";
-	 }
-
-    // TODO: change name of child nft
     constructor() ERC721("Toad Sockz (Gen 0)", "SOCKZ") {
     }
 
@@ -2017,28 +1992,24 @@ contract Sockz is ERC721, ReentrancyGuard, Ownable {
         _setBaseURI(baseURI);
     }
 
-    //Private sale minting (reserved for Parent NFT owners)
-    // TODO: can change message to fit brand
-    function mintWithNFT(uint nftId) public payable nonReentrant {
-        require(mintIsActive, "NFT must be active to mint");
-        require(nftContract.ownerOf(nftId) == msg.sender, "Not the owner of this toad");
-        require(msg.value >= tokenPrice, "Not enough ether sent!");
-        require(!_exists(nftId), "This toad already has sockz.");
+    //Private sale minting (reserved for toad owners)
+    function mintWithToad(uint toadId) public nonReentrant {
+        require(mintIsActive, "Mint must be active to mint");
+        require(toadContract.ownerOf(toadId) == msg.sender, "Not the owner of this toad");
+        require(!_exists(toadId), "This toad already has sockz.");
 
-        _safeMint(msg.sender, nftId);
+        _safeMint(msg.sender, toadId);
     }
-    // TODO: can change message to fit brand
-    function multiMintWithnft(uint[] memory nftIds) public payable nonReentrant {
-        require(mintIsActive, "NFT must be active to mint");
-        require(msg.value >= tokenPrice * nftIds.length, "Not enough ether sent!");
-        for (uint i=0; i<nftIds.length; i++) {
-            require(nftContract.ownerOf(nftIds[i]) == msg.sender, "Not the owner of this nft");
-            require(!_exists(nftIds[i]), "One of these toadz already has Sockz.");
-            _safeMint(msg.sender, nftIds[i]);
+    function multiMintWithToad(uint[] memory toadIds) public nonReentrant {
+        require(mintIsActive, "Mint must be active to mint");
+        for (uint i=0; i<toadIds.length; i++) {
+            require(toadContract.ownerOf(toadIds[i]) == msg.sender, "Not the owner of this toad");
+            require(!_exists(toadIds[i]), "One of these toadz already has Sockz.");
+            _safeMint(msg.sender, toadIds[i]);
         }
     }
-    // TODO: can change message to fit brand
-    function multiClaimWithSockz(uint[] memory sockIds) public payable nonReentrant {
+
+    function multiClaimWithSockz(uint[] memory sockIds) public nonReentrant {
         require(claimIsActive, "Claim is not opened, please come back later.");
         for (uint i=0; i<sockIds.length; i++) {
             require(ownerOf(sockIds[i]) == msg.sender, "Not the owner of this sock");
@@ -2046,8 +2017,8 @@ contract Sockz is ERC721, ReentrancyGuard, Ownable {
 			emit Claim(msg.sender, sockIds[i]);
         }
     }
-    // TODO: can change message to fit brand.
-	function claim(uint sockId) public payable nonReentrant {
+
+	function claim(uint sockId) public nonReentrant {
         require(claimIsActive, "Claim is not opened, please come back later.");
 		require(msg.sender == ownerOf(sockId), "Not owner of this sock");
 		_transfer(msg.sender, address(0), sockId);
@@ -2056,27 +2027,4 @@ contract Sockz is ERC721, ReentrancyGuard, Ownable {
 
 
     //Public sale minting removed.
-
-
-    function toString(uint256 value) internal pure returns (string memory) {
-    // Inspired by OraclizeAPI's implementation - MIT license
-    // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol
-
-        if (value == 0) {
-            return "0";
-        }
-        uint256 temp = value;
-        uint256 digits;
-        while (temp != 0) {
-            digits++;
-            temp /= 10;
-        }
-        bytes memory buffer = new bytes(digits);
-        while (value != 0) {
-            digits -= 1;
-            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));
-            value /= 10;
-        }
-        return string(buffer);
-    }
 }
