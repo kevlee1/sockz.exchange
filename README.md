@@ -52,4 +52,4 @@ Contract by UXT: [twitter](https://twitter.com/uxt_exe) [github](https://github.
 
 Ideation and Marketing by [12yr Old w/ Credit Card](https://twitter.com/12yrold_with_cc)
 
-Product and 3D Models: [Mackody](https://twitter.com/_mackody), [chase](https://twitter.com/slurpee85) and [sleepingmonkey]
+Product and 3D Models: [Mackody](https://twitter.com/_mackody), [chase](https://twitter.com/slurpee85) and [sleepingmonkey](https://twitter.com/sleepingm0nkey)
