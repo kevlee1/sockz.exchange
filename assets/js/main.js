@@ -297,7 +297,6 @@ ismobile();
         const contract = new ethers.Contract(contractAddress, Sockz, signer);
         const transaction = await contract.multiMintWithToad(toadIds);
         await transaction.wait();
-        mintCount = mintCount + toadIds.length;
       }
       else if (incrementValue.innerText == 1) {
         var toadId = prompt("Please enter the toadId you would like to mint from: ", "toadId");
@@ -306,7 +305,6 @@ ismobile();
         const contract = new ethers.Contract(contractAddress, Sockz, signer);
         const transaction = await contract.mintWithToad(toadInt);
         await transaction.wait();
-        mintCount = mintCount++;
       }
       else {
         window.alert("please choose how many sockz you would like to mint");
