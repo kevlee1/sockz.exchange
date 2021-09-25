@@ -4,12 +4,13 @@ import Sockz from '../../src/util/sockzAbi.json' assert { type: "json" };
 const contractAddress = "0x537B9AF55daDcaD9D22309e5b8CE35CFFD8c1925"
 
 // Is mobile?
-
+var isItMobile = false;
 function ismobile() {
   let isMobile = window.matchMedia("only screen and (max-width: 740px)").matches;
 
   if (isMobile) {
-      console.log("is mobile")
+      console.log("is mobile");
+      isItMobile = true;
   }
 }
 
@@ -73,14 +74,19 @@ ismobile();
   document.getElementsByClassName("connect")[0].addEventListener('click', connectToWallet);
 
   async function connectMetaMask(){
-    await window.ethereum.request({ method: 'eth_requestAccounts' });
-    provider = new ethers.providers.Web3Provider(window.ethereum);
-    signer = provider.getSigner();
-    walletModalWrap.style.display = "none";
-    address = await signer.getAddress();
-    document.getElementById("address").innerHTML = address;
-    document.getElementById("mintingNow").innerHTML = "Mint Sockz";
-    isConnected = true;
+    if(!isItMobile){
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+      provider = new ethers.providers.Web3Provider(window.ethereum);
+      signer = provider.getSigner();
+      walletModalWrap.style.display = "none";
+      address = await signer.getAddress();
+      document.getElementById("address").innerHTML = address;
+      document.getElementById("mintingNow").innerHTML = "Mint Sockz";
+      isConnected = true;
+    }
+    else{
+      showError();
+    }
   }
 
   document.getElementById("metaMask").addEventListener('click', connectMetaMask);
