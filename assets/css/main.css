@@ -670,15 +670,16 @@ body{
 
 				.errorMessage{
 					position: relative;
-			    top: -131px;
-			    left: 8px;
-			    width: 290px;
-			    color: white;
-			    font-family: 'Comic Neue';
-			    font-size: 18px;
-			    margin: 30px 0;
-			    width: 400px;
-			    padding: 0px 80px;
+			    	top: -131px;
+			    	left: 8px;
+			    	width: 290px;
+
+			    	color: white;
+			    	font-family: 'Comic Neue';
+			    	font-size: 18px;
+			    	margin: 30px 0;
+			    	width: 400px;
+			    	padding: 0px 80px;
 
 				}
 				.errorMessage div{
@@ -1377,6 +1378,14 @@ body{
 				font-weight: lighter;
 			}
 
+			.infoBody a:link { 
+				color: lightblue;
+				text-decoration: underline;
+			}
+			.infoBody a:visited {
+				color: lightblue;
+			}
+
 			.infoButtons{
 				position:absolute;
 				bottom: 123px;
@@ -1532,7 +1541,7 @@ body{
 					margin: 0 50px;
 				}
 				.editInfo{
-					font-size:14px;
+					font-size:13px;
 					width: 260px;
 					display: flex;
 					flex-direction: column;
@@ -2008,9 +2017,20 @@ body{
 				top: -112px;
 				left: -52px;
 			}
+			#errorMessage1{
+				position: absolute;
+    			top: 50%;
+    			left: 50%;
+    			margin-right: -50%;
+    			transform: translate(-50%, -50%);
+			}
 			.errorMessageWrap{
 				width:300px;
 				padding: 10px 0 0 10px;
+				position:absolute;
+				top:50%;
+				left:50%;
+				display: none;
 			}
 			.errorTitle, .errorText{
 				font-size: 16px;

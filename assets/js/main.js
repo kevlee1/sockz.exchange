@@ -2,15 +2,14 @@
 import Sockz from '../../src/util/sockzAbi.json' assert { type: "json" };
 // Update with actual contract address
 const contractAddress = "0x537B9AF55daDcaD9D22309e5b8CE35CFFD8c1925"
-
+var errorMessageWrap = document.getElementById('errorMessage1');
 // Is mobile?
-var isItMobile = false;
 function ismobile() {
   let isMobile = window.matchMedia("only screen and (max-width: 740px)").matches;
 
   if (isMobile) {
       console.log("is mobile");
-      isItMobile = true;
+      showError();
   }
 }
 
@@ -30,7 +29,7 @@ ismobile();
   var disableSellRedeem = document.getElementsByClassName('sellredeemDisabled')[0];
 
   var walletModalWrap = document.getElementsByClassName('walletModalWrap')[0];
-  var errorMessageWrap = document.getElementsByClassName('errorMessageWrap')[0];
+  //var errorMessageWrap = document.getElementById('errorMessage1');
   var signer;
   var provider;
   var address;
@@ -74,19 +73,14 @@ ismobile();
   document.getElementsByClassName("connect")[0].addEventListener('click', connectToWallet);
 
   async function connectMetaMask(){
-    if(!isItMobile){
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
-      provider = new ethers.providers.Web3Provider(window.ethereum);
-      signer = provider.getSigner();
-      walletModalWrap.style.display = "none";
-      address = await signer.getAddress();
-      document.getElementById("address").innerHTML = address;
-      document.getElementById("mintingNow").innerHTML = "Mint Sockz";
-      isConnected = true;
-    }
-    else{
-      showError();
-    }
+    await window.ethereum.request({ method: 'eth_requestAccounts' });
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    signer = provider.getSigner();
+    walletModalWrap.style.display = "none";
+    address = await signer.getAddress();
+    document.getElementById("address").innerHTML = address;
+    document.getElementById("mintingNow").innerHTML = "Mint Sockz";
+    isConnected = true;
   }
 
   document.getElementById("metaMask").addEventListener('click', connectMetaMask);
@@ -129,17 +123,19 @@ ismobile();
     errorMessageWrap.style.display = "none"
   }
   function showError(){
+    console.log("error thing", errorMessageWrap);
+
     errorMessageWrap.style.display = "block"
     errorMessageWrap.style.marginLeft = "0px"
 
-    setTimeout(function () {
+    /* setTimeout(function () {
       errorMessageWrap.style.marginLeft = "-490px"
 
       setTimeout(function () {
         errorMessageWrap.style.display = "none"
       }, 1000);
 
-    }, 3000);
+    }, 3000); */
 
   }
 
