@@ -9,7 +9,7 @@ function ismobile() {
 
   if (isMobile) {
       console.log("is mobile");
-      showError();
+      //showError();
   }
 }
 
