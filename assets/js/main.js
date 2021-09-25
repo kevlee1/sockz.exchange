@@ -1,7 +1,7 @@
 //import { ethers } from 'ethers';
 import Sockz from '../../src/util/sockzAbi.json' assert { type: "json" };
 // Update with actual contract address
-const contractAddress = "0x1Ba0F92c9290611d19AE2B2B837994d489704D7d"
+const contractAddress = "0x537B9AF55daDcaD9D22309e5b8CE35CFFD8c1925"
 
 // Is mobile?
 

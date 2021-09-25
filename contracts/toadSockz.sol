@@ -1960,9 +1960,9 @@ contract Sockz is ERC721, ReentrancyGuard, Ownable {
 
     //toad Contract
     //mainnet
-	//address public toadAddress = 0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6;
+	address public toadAddress = 0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6;
 	//rinkeby
-	address public toadAddress = 0x70BC4cCb9bC9eF1B7E9dc465a38EEbc5d73740FB;
+	//address public toadAddress = 0x70BC4cCb9bC9eF1B7E9dc465a38EEbc5d73740FB;
     ToadInterface toadContract = ToadInterface(toadAddress);
 
     function tokenURI(uint256 tokenId) override public view returns (string memory) {
