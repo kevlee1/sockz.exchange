@@ -201,13 +201,13 @@ ismobile();
      buySockPanel.style.display = "flex";
      boughtSockPanel.style.display = "none";
 
-     incrementWrap.style.display = "block";
+     incrementWrap.style.display = "flex";
      buycurrentPrice.style.display = "block";
 
      boughtBackground.style.display = "none";
      background.style.display = "block";
 
-     buyeditInfoWrap.style.display = "block";
+     buyeditInfoWrap.style.display = "flex";
      boughteditInfoWrap.style.display = "none";
 
    } else if (event.target.className == "infoModalWrap" || event.target.className == "infobckbutton" ){
@@ -325,7 +325,7 @@ ismobile();
     buycurrentPrice.style.display = "none";
 
     buyeditInfoWrap.style.display = "none";
-    boughteditInfoWrap.style.display = "block";
+    boughteditInfoWrap.style.display = "flex";
 
     boughtBackground.style.display = "block";
 
