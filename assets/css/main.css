@@ -1488,6 +1488,11 @@ body{
 				display:flex;
 			}
 			.desktopError{
+				position: absolute;
+    			top: 50%;
+    			left: 50%;
+    			margin-right: -50%;
+    			transform: translate(-50%, -50%);
 				display:none
 			}
 		@media only screen and (max-width: 1800px) {
