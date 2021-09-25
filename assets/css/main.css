@@ -1,608 +1,2127 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-
-    <meta charset="utf-8">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <title>TOADZ SOCKZ</title>
-
-  </head>
-
-  <body>
-
-    <div class="banner">
-      <div class="board">
-
-
-        <div class="boardXXLwrap">
-
-          <div class="sides">
-            <div class="boardXXLL">
-
-              <div class="leftBoardWrap">
-                <img class="mobileBoard" src="assets/images/banner/board-xxl-l.png" style="float: left">
-                <img class="leftgoo" src="assets/images/banner/leftgoo.png">
-              </div>
-
-            </div>
-
-            <div class="boardXXLR">
-
-              <div class="rightBoardWrap">
-              <img class="mobileBoard" src="assets/images/banner/board-xxl-r.png" style="float: right">
-              <img class="rightgoo" src="assets/images/banner/rightgoo.png">
-            </div>
-
-
-
-            </div>
-
-          </div>
-          <div class="xxlMidBoard">
-            <img class="boardXXLM" src="assets/images/banner/board-xxl-m.svg">
-          </div>
-
-        </div>
-
-
-
-
-
-      </div>
-    </div>
-
-    <div class="logo">
-      <img class="mobileLogo" src="assets/images/banner/masthead-logo.svg">
-    </div>
-
-    <div class="burger">
-      <img src="assets/images/banner/burger.png">
-    </div>
-
-    <!-- Banner Buttons -->
-
-    <div class="bannerButtons">
-
-      <div class="redeem">
-
-        <div class="redeembck">
-          <img src="assets/images/banner/redeem.png">
-          <img src="assets/images/banner/redeemfirey.png">
-        </div>
-
-        <div class="redeemTxt noselect">
-
-          <div class="fire">
-            <img src="assets/images/banner/fire.png">
-          </div>
-          <div class="redeemedNum">6969 Redeemed</div>
-
-        </div>
-
-        <div class="redeemTxtHover noselect">9999 Sockz Left</div>
-
-      </div>
-
-
-      <!-- not connected yet -->
-
-      <div class="connect" onclick="connectWallet()">
-
-        <div class="connectbck">
-          <img src="assets/images/banner/connect.png">
-          <img src="assets/images/banner/connectHover.png">
-        </div>
-
-        <div class="connectTxt noselect">Connect</div>
-
-      </div>
-
-      <!-- Connected! -->
-
-      <div class="connected" onclick="disconnectWallet()">
-
-        <div class="connectedbck">
-          <img src="assets/images/banner/connected.png">
-          <img src="assets/images/banner/connectedhover.png">
-        </div>
-
-        <div class="connectedTxt noselect">0xdDAbBJFD</div>
-
-      </div>
-
-      <div class="questions" onclick="moreinfo()">
-        <img src="assets/images/banner/questions.svg">
-      </div>
-
-    </div>
-
-    <!-- background -->
-
-        <!-- Dithering -->
-
-
-      <div class="background">
-
-        <div class="ditherTop">
-          <img src="assets/images/bkgrd/dither-top.svg">
-        </div>
-        <div class="ditherBottom">
-          <img src="assets/images/bkgrd/dither-bottom.svg">
-        </div>
-
-
-        <div class="clouds">
-          <div class="cloudleft">
-            <img src="assets/images/bkgrd/cloud-l.svg">
-          </div>
-          <div class="cloudright">
-            <img src="assets/images/bkgrd/cloud-r.svg">
-          </div>
-        </div>
-
-        <!-- orange arrow -->
-        <div class="bkrgdArrow">
-          <img src="assets/images/bkgrd/bkarrow.svg">
-        </div>
-
-        <!-- frogs -->
-        <div class="brainyfrog">
-          <img src="assets/images/bkgrd/brainy.svg">
-        </div>
-
-        <div class="smokey">
-          <img src="assets/images/bkgrd/smokey.svg">
-        </div>
-
-        <!-- weeds -->
-        <div class="weedleft">
-          <img src="assets/images/bkgrd/weed-l.svg">
-        </div>
-        <div class="weedright">
-          <img src="assets/images/bkgrd/weed-r.svg">
-        </div>
-
-        <!-- background skull -->
-          <div class="skullybgrd">
-            <img src="assets/images/bkgrd/skull-bgrd.svg">
-        </div>
-
-        <!-- talking skull -->
-        <div class="skullyWrap">
-
-          <div class="skullyWraptxt">
-            <img class="skullytxt" src="assets/images/bkgrd/skull/GM.svg">
-          </div>
-
-          <img class="skully" src="assets/images/bkgrd/skully.svg">
-
-        </div>
-
-        <!-- bubbles -->
-
-        <div class="bubbles">
-
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble1.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble2.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble3.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble1.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble2.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble3.png">
-
-        </div>
-
-      </div>
-
-    <!-- Wallet modal -->
-
-    <div class="walletModalWrap">
-
-      <div class="walletConnBoard">
-        <img class="walletBckMobile" src="assets/images/wallet/walletmodal.png">
-
-        <div class="backWallet">
-          <img class="walletBackButton" src="assets/images/modal/goback.png">
-        </div>
-
-
-        <div class="wallettxt">
-
-          <div class="infoWallet">
-            <div class="connectWallTxt">Connect your wallet</div>
-
-            <div class="line">
-              <img src="assets/images/wallet/line.png">
-            </div>
-
-            <div class="walletButton" onclick="showError()">
-              <img src="assets/images/wallet/smallboard.png">
-              <div class="walletButtTxt shortboard">
-                MetaMask
-              </div>
-            </div>
-
-            <div class="line">
-              <img src="assets/images/wallet/line.png">
-            </div>
-
-            <div class="walletButton" onclick="showError()">
-              <img src="assets/images/wallet/largeboard.png">
-              <div class="walletButtTxt longboard">
-                Wallet Connect
-              </div>
-            </div>
-
-            <!-- <div class="line">
-              <img src="assets/images/wallet/line.png">
-            </div> -->
-
-            <!-- <div class="walletButton" onclick="showError()">
-              <img src="assets/images/wallet/largeboard.png">
-              <div class="walletButtTxt longboard">
-                Browser Wallet
-              </div>
-            </div> -->
-
-            <div class="line">
-              <img src="assets/images/wallet/line.png">
-            </div>
-
-
-          </div>
-
-        </div>
-      </div>
-
-
-    </div>
-
-    <!-- error messages -->
-    <div class="errorMessageWrap noselect">
-      <div class="errorBack" onclick="closeError()">
-        <img src="assets/images/wallet/errorBack.png">
-      </div>
-
-      <div class="errorBoard">
-        <img class="errorImg" src="assets/images/wallet/message.png">
-        <!-- <div class="errorMessage">
-          <div class="errorTitle">
-            Error: XXXX
-          </div>
-          <div class="errorText">
-            Failed to connect to your wallet.
-          </div>
-        </div> -->
-
-        <div class="errorMessage">
-          <div class="errorTitle">
-            Success: XXXX
-          </div>
-          <div class="errorText">
-            You've successfully connected to your wallet.
-          </div>
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-    <!-- MODAL -->
-
-        <div class="modalWrap">
-
-          <div class="sock">
-
-            <div class="sockboard">
-              <img class="mobileSockBgrd" src="assets/images/modal/sockbgrd2.png">
-            </div>
-            <div class="sockGifWrap">
-              <div class="sockGif">
-                <img class="mobileSockBgrd" src="assets/images/gif/sock3.gif" alt="funny GIF" width="100%">
-              </div>
-            </div>
-
-
-
-            <div class="sockCountDown">
-              <div class="tickerTxt noselect">($Toadz)</div>
-              <div class="countDownTxt noselect" style="text-align: center;font-size:24px;color:#aaa9a7;">6969/6969</div>
-            </div>
-
-            <div class="currentPrice">
-              <div class="currentPriceTxt dH2 noselect">Current Price</div>
-              <div class="priceTxt noselect">100 ETH</div>
-            </div>
-
-            <div class="editInfoWrap">
-
-              <div class="editInfo noselect">
-                <div class="" style="color:white;padding-bottom:3px">Sockz (Edition 0)</div>
-                <div class="brownBoardTxt">Buy and sell real socks with digital currency. Delivered on demand.</div>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="buysockz" onclick="showBuyModal()">
-            <img src="assets/images/modal/buynow.png">
-            <img id="buyhover" src="assets/images/modal/buynowhover.png">
-            <div class="buyNowTxt noselect" >Get Sockz</div>
-          </div>
-
-          <div class="sellredeemDisabled">
-            <div class="sell">
-              <div class="selltxt">Sell</div>
-
-              <a href="https://opensea.io" target="_blank">
-              <img src="assets/images/modal/sellredeem.svg">
-              </a>
-            </div>
-            <div class="redeeming">
-              <div class="selltxt">Redeem</div>
-              <img src="assets/images/modal/sellredeem.svg">
-            </div>
-          </div>
-
-          <div class="sellredeem">
-            <div class="sell" onclick="console.log('SELL lFG')">
-              <div class="selltxt">Sell</div>
-              <img id="sellowns" src="assets/images/modal/sellOwns.png">
-              <img id="sellownshover" src="assets/images/modal/sellOwnsHover.png">
-            </div>
-            <div class="redeeming" onclick="console.log('REDEEM LFG')">
-              <div class="selltxt">Redeem</div>
-              <img id="redeemowns" src="assets/images/modal/redeemOwns.png" >
-              <img id="redeemownshover" src="assets/images/modal/redeemOwnsHover.png" >
-            </div>
-          </div>
-
-
-          <div class="fox">
-            <img src="assets/images/bkgrd/fox.png">
-          </div>
-
-        </div>
-
-      <!-- BUYING MODAL-->
-
-      <div class="buyModalWrap">
-
-        <!-- bubbles -->
-
-        <div class="buybubbles">
-
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble1.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble2.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble3.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble1.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble2.png">
-          <img class="bubble" src="assets/images/bkgrd/bubbles/bubble3.png">
-
-        </div>
-
-
-        <div class="buyModal">
-
-          <div class="sock">
-
-            <div class="sockboard">
-
-              <!-- if buying display -->
-              <img class="mobileSockBgrd" id="buySockPanel" src="assets/images/modal/buyingBack2.png">
-              <!-- if bought display-->
-              <img id="boughtSockPanel" src="assets/images/modal/boughtBack2.png">
-
-              <div class="sockGifWrap">
-                <div class="sockGif">
-                  <img class="mobileSockBgrd" src="assets/images/gif/sock3.gif" alt="funny GIF" width="100%">
-                </div>
-              </div>
-
-
-            </div>
-
-            <div class="buycurrentPrice">
-              <div class="dH2 noselect" style="font-size:15px; text-align: center;color:#aaa9a7;letter-spacing: 1px;">Current Price</div>
-              <div class="priceTxt dH1 noselect">100 ETH</div>
-            </div>
-
-            <div class="incrementWrap">
-
-              <!-- <img src="assets/images/modal/sockzcount.png"> -->
-
-              <div class="incrementTxt noselect">
-
-                <div class="minus" onclick="minusone()">-</div>
-                <div class="incrementValue">1</div>
-                <div class="plus" onclick="addone()">+</div>
-
-              </div>
-
-              <div class="incrementCount">6969/6969 Left</div>
-
-            </div>
-
-            <div class="buyeditInfoWrap">
-              <div class="editInfo noselect">
-                <div class="" style="color:white;padding-bottom:3px">Sockz (Edition 0)</div>
-                <div class="">Buy and sell real socks with digital currency. Delivered on demand.</div>
-              </div>
-            </div>
-
-            <div class="boughteditInfoWrap">
-              <div class="editInfo noselect">
-                <div class="" style="color:white;padding-bottom:3px">Congrats On The Sockz!</div>
-                <div class="">You should feel proud, you just bought into the futures of Sockz</div>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="buyingsockz" onclick="buyingSockz()">
-            <img src="assets/images/modal/buynow.png">
-            <img id="buyhover" src="assets/images/modal/buynowhover.png">
-            <div class="buyNowTxt noselect">Connect Wallet</div>
-          </div>
-
-          <!-- SHILL + OPENSEA -->
-
-          <div class="shillopensea">
-
-            <div class="sellredeemwrap">
-              <div class="sell">
-                <div class="shillOstxt" onclick="window.open('https://twitter.com/sockzDAO', '_blank');">Shill</div>
-                  <img src="assets/images/modal/shill.png">
-              </div>
-              <div class="redeeming">
-                <div class="shillOstxt" onclick="window.open('https://opensea.io', '_blank');">Opensea</div>
-                  <img src="assets/images/modal/opensea.png">
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-          <!-- bought background -->
-
-          <div class="boughtBackground">
-            <div class="complimentToad">
-              <img class="thxtoad" src="assets/images/modal/skelleton.png">
-              <img class="thxtoad" src="assets/images/modal/sickfrogz.png">
-            </div>
-
-            <!-- frogs -->
-            <div class="brainyfrog">
-              <img src="assets/images/bkgrd/brainy.svg">
-            </div>
-
-            <div class="smokey">
-              <img src="assets/images/bkgrd/smokey.svg">
-            </div>
-
-            <!-- clouds -->
-            <div class="clouds">
-              <div class="cloudleft">
-                <img src="assets/images/bkgrd/cloud-l.svg">
-              </div>
-              <div class="cloudright">
-                <img src="assets/images/bkgrd/cloud-r.svg">
-              </div>
-            </div>
-
-
-        </div>
-
-      </div>
-
-      <div class="infoModalWrap">
-        <div class="infotransition">
-
-          <div class="infomodal">
-            <img class="infobck" src="assets/images/modal/infoBack.png">
-            <div class="goback">
-              <img class="infobckbutton" src="assets/images/modal/goback.png">
-            </div>
-
-            <div class="infoText">
-              <div class="infoParagraph">
-                <div class="infoTitle" style="padding-bottom:30px">What Are Sockz?
-                </div>
-                <div class="infoBody">
-                  SOCKZ is a NFT (ERC721 Standard) that can be redeemed for 1 pair of Sockz delivered to you anywhere, anytime.                </div>
-              </div>
-
-              <div class="line">
-                <img src="assets/images/wallet/line.png">
-              </div>
-
-              <div class="infoParagraph">
-                <div class="infoTitle">How It Works:
-                </div>
-                <div class="infoBody">
-                  SOCKZ (Edition 0) are claimable by all CrypToadz Holder with a maximum supply of 6969 SOCKZ.
-                  <br>
-                  You can transfer, sell, or trade the NFT anytime on a variety of platforms. To receive a pair shipped to your front door, you have to redeem it.
-                </div>
-              </div>
-
-              <div class="line">
-                <img src="assets/images/wallet/line.png">
-              </div>
-
-              <div class="infoParagraph">
-                <div class="infoTitle">But Ser: (Why)
-                </div>
-                <div class="infoBody">
-You can transfer, sell, or trade the NFT anytime on a variety of platforms. To receive a pair shipped to your front door, you have to redeem it.                </div>
-              </div>
-
-              <div class="line">
-                <img src="assets/images/wallet/line.png">
-              </div>
-
-              <div class="infoParagraph">
-                <div class="infoTitle">
-                  Colophon:
-                </div>
-                <div class="infoBody">
-                  A <a target="_blank" href="https://twitter.com/ghxstdao">GhostDAO</a> Production (They're funding the Airdrop)<br>
-                  Inspired by the art of <a target="_blank" href="https://twitter.com/supergremplin">Gremplin</a><br>
-                  Sockz Design by <a target="_blank" href="https://twitter.com/_mackody">Mackody</a><br>
-                  Website by <a target="_blank" href="https://twitter.com/kevlee97">Klee</a> and <a target="_blank" href="https://twitter.com/papaya3359">Papaya</a><br>
-                  Contract by <a target="_blank" href="https://twitter.com/uxt_exe">Uxt</a><br>
-                  3D Renders by <a target="_blank" href="https://www.instagram.com/leonerdus/">Chase</a><br>
-                  Manufacturing by <a target="_blank" href="https://twitter.com/sleepingm0nkey">SleepingMonkey</a><br>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="infoButtons">
-
-              <div class="buybuy">
-                <div class="buysockzinfo">
-                  <img class="buynowMobile" src="assets/images/modal/buynow.png">
-                  <img id="buyhover" src="assets/images/modal/buynowhover.png">
-                  <div class="infobuyNowTxt noselect" onclick="showBuyModal()">Buy Sockz</div>
-                </div>
-
-              </div>
-
-              <div class="twitterOS">
-
-                  <div class="sell" >
-                    <div class="selltxt" onclick="window.open('https://twitter.com/sockzDAO', '_blank');">Twitter</div>
-                    <img src="assets/images/modal/shill.png">
-                  </div>
-
-                  <div class="redeeming">
-                    <div class="selltxt" onclick="window.open('https://discord.gg/Aa9p4MHUgy', '_blank');">Discord</div>
-                    <img src="assets/images/modal/opensea.png">
-                  </div>
-
-              </div>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <script type="text/javascript" src="assets/js/main.js"></script>
-
-  </body>
-
-</html>
+* {
+	list-style:none;
+	margin:0;
+	outline:none;
+	padding:0;
+	text-decoration:none;
+  -webkit-box-sizing: border-box;
+  box-sizing:border-box;
+}
+
+@font-face {
+	font-family: 'Wizards';
+	src: url('/assets/fonts/BoxingWizards-Regular.otf');
+}
+@font-face {
+	font-family: 'FatFrank';
+	src: url('/assets/fonts/FratFrank-Free.otf');
+}
+@font-face {
+	font-family: 'Polybius';
+	src: url('/assets/fonts/Polybius1981.ttf');
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Light'), local('ComicNeue-Light'),
+        url('/assets/fonts/comic/ComicNeue-Light.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeue-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Italic'), local('ComicNeue-Italic'),
+        url('/assets/fonts/comic/ComicNeue-Italic.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeue-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Bold'), local('ComicNeue-Bold'),
+        url('/assets/fonts/comic/ComicNeue-Bold.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeue-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Bold Italic'), local('ComicNeue-BoldItalic'),
+        url('/assets/fonts/comic/ComicNeue-BoldItalic.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeue-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Light Italic'), local('ComicNeue-LightItalic'),
+        url('/assets/fonts/comic/ComicNeue-LightItalic.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeue-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Regular'), local('ComicNeue-Regular'),
+        url('/assets/fonts/comic/ComicNeue-Regular.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Bold'), local('ComicNeueAngular-Bold'),
+        url('/assets/fonts/comic/ComicNeueAngular-Bold.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeueAngular-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Italic'), local('ComicNeueAngular-Italic'),
+        url('/assets/fonts/comic/ComicNeueAngular-Italic.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeueAngular-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Bold Italic'), local('ComicNeueAngular-BoldItalic'),
+        url('/assets/fonts/comic/ComicNeueAngular-BoldItalic.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeueAngular-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Light Italic'), local('ComicNeueAngular-LightItalic'),
+        url('/assets/fonts/comic/ComicNeueAngular-LightItalic.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeueAngular-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Regular'), local('ComicNeueAngular-Regular'),
+        url('/assets/fonts/comic/ComicNeueAngular-Regular.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeueAngular-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Light'), local('ComicNeueAngular-Light'),
+        url('/assets/fonts/comic/ComicNeueAngular-Light.woff2') format('woff2'),
+        url('/assets/fonts/comic/ComicNeueAngular-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+	background-color:#071425;
+	z-index: 0;
+	font-family: 'Wizards'
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+					}
+
+.dH1{
+	font-family: 'Comic Neue';
+	font-weight: regular;
+	font-size: 32px;
+	letter-spacing: 1px;
+	/* color:#aaa9a7; */
+}
+.dH2{
+	font-family: 'Comic Neue';
+	font-weight: Regular;
+	font-size: 24px;
+	/* color:#aaa9a7; */
+}
+
+
+.ditherTop img{
+	position:absolute;
+	width:100%;
+	top:0;
+	z-index: 5;
+}
+.ditherBottom img{
+	position:absolute;
+	width:100%;
+	bottom:0;
+	z-index: 5;
+}
+.banner{
+	position:absolute;
+	/* margin:20px; */
+	height:100px;
+	width:100%;
+	z-index: 20;
+	margin:0;
+}
+
+	.board{
+		width:100%;
+		position:relative;
+		padding: 30px 30px 0 30px;
+	}
+	.logo{
+		position: absolute;
+		top: 53px;
+		left: 100px;
+		z-index: 30;
+	}
+
+		.sides{
+			display:flex;
+			position:relative;
+			justify-content: space-between;
+			z-index: 22;
+		}
+		.boardXXLM{
+			position: absolute;
+		  left: 0;
+		  right: 0;
+		  margin-left: auto;
+		  margin-right: auto;
+			z-index: 21;
+			margin-top:3px
+		}
+
+		.boardXXLL{
+			position:absolute;
+			left:0;
+		}
+		.boardXXLR{
+			position:absolute;
+			right:0;
+			z-index: 1;
+		}
+		.bannerButtons{
+			position:absolute;
+			right:0;
+			z-index: 1;
+		}
+
+		.leftgoo{
+	    position: absolute;
+	    z-index: 20;
+	    left: 20vw;
+		}
+		.rightgoo{
+			position: absolute;
+			right: 80%;
+			top: 67px;
+		}
+
+		/* Temporary measure because mid is too long */
+		.xxlMidBoard{
+			/* background-color:pink; */
+			width:40%;
+			overflow:hidden;
+			position: absolute;
+		  left: 0;
+		  right: 0;
+		  margin-left: auto;
+		  margin-right: auto;
+			/* z-index: 21; */
+			top:30px;
+			height:150px;
+
+		}
+
+		.boardM{
+			display:none;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			z-index: 21;
+			top:33px
+		}
+		.logoM{
+			display: none
+		}
+
+		.bannerButtons{
+			position: absolute;
+			display: flex;
+			top: 62px;
+	    right: 72px;
+	    z-index: 20;
+		}
+		.bannerButtons div{
+			padding-left:5px
+		}
+
+			.redeem{
+				cursor: initial;
+			}
+					.redeembck img:nth-child(1){
+						display:block
+					}
+
+					.redeembck img:nth-child(2){
+						display:none;
+						top: -25px;
+						position: relative;
+					}
+
+					.redeem:hover .redeembck img:nth-child(1){
+						display:none
+					}
+
+					.redeem:hover .redeembck img:nth-child(2){
+						display:block;
+					}
+
+			/* Not yet connected */
+
+			.connect{
+				cursor:pointer
+			}
+
+					.connect img:nth-child(1){
+						display:block;
+
+					}
+
+					.connect img:nth-child(2){
+						display:none;
+						position: relative;
+						margin-left: 1px;
+
+					}
+
+					.connect:hover img:nth-child(1){
+						display:none
+					}
+
+					.connect:hover img:nth-child(2){
+						display:block;
+					}
+
+					.connectTxt{
+						position: absolute;
+						display: block;
+						bottom: 23px;
+						font-family: 'Wizards';
+						font-size: 30px;
+						color: white;
+						width: 162px;
+						text-align: center;
+						white-space: nowrap;
+						right: 67px;
+						top: 9px;
+					}
+
+					/* Connected */
+
+					/* Connected background */
+
+					.connected{
+						display:none;
+						cursor:pointer
+					}
+							.connected img:nth-child(1){
+								display:block;
+								width:175px;
+							}
+
+							.connected img:nth-child(2){
+								display:none;
+								position: relative;
+							}
+
+							.connected:hover img:nth-child(1){
+								display:none
+							}
+
+							.connected:hover img:nth-child(2){
+								display:block;
+								margin-left: 1px;
+
+							}
+
+							.connected{
+								/* padding-top: 3px;
+								padding-left: 5px; */
+							}
+
+					/* Connected Text */
+
+
+					.connectedTxt{
+						position: absolute;
+						display: block;
+						top: 9px;
+						/* bottom: 23px; */
+						right: 71px;
+						width: 153px;
+						height: 33px;
+						margin-left: 12px;
+						font-family: 'Wizards';
+						font-size: 30px;
+						color: white;
+						text-align: center;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+					}
+
+					/* Redeem Text Hovers */
+
+					.redeemTxt{
+						position: absolute;
+						display:block;
+						bottom: 23px;
+						font-family: 'Wizards';
+						font-size: 28px;
+						color: white;
+						width: 230px;
+						text-align: center;
+						white-space: nowrap;
+						right:  249px;
+						/* background-color: antiquewhite; */
+						top: 9px;
+						display:flex;
+					}
+					.redeemTxtHover{
+						position: absolute;
+						display:none;
+						bottom: 23px;
+						font-family: 'Wizards';
+						font-size: 28px;
+						color: white;
+						width: 230px;
+						text-align: center;
+						white-space: nowrap;
+						right: 256px;
+						/* background-color: antiquewhite; */
+						top: 9px;
+					}
+					.redeem:hover .redeemTxt{
+						display:none;
+					}
+					.redeem:hover .redeemTxtHover{
+						display:block;
+					}
+
+					.redeemedNum{
+						padding-left:10px
+					}
+					.fire{
+						padding-top: 3px;
+						padding-left: 5px;
+					}
+
+					.questions{
+						padding-top: 3px;
+						margin-left: 7px;
+						cursor:pointer;
+					}
+
+				/* background elements */
+
+				.background{
+					position: fixed;
+					width:100%;
+					height:100%;
+					overflow:hidden;
+				}
+
+				.cloudleft{
+					position: absolute;
+					bottom:0;
+					left:0;
+					z-index: 10;
+				}
+				.cloudright{
+					position: absolute;
+					bottom:0;
+					right:0;
+					z-index: 10;
+					transition: margin .5s ease;
+				}
+				.bkrgdArrow{
+					position: absolute;
+					bottom:40px;
+					right:0;
+					z-index: 10
+				}
+				.brainyfrog{
+					position: absolute;
+					bottom:0px;
+					right:170px;
+					z-index: 9;
+				}
+				.smokey{
+					position: absolute;
+					bottom:40px;
+					left:10px;
+					z-index: 9;
+				}
+
+				.weedleft{
+
+					position: absolute;
+					left:-16px;
+					top:40%;
+					-webkit-animation: ease-in-out infinite;
+					-webkit-animation-name: run1;
+					-webkit-animation-duration:5s;
+					transform-origin: bottom left;
+
+				}
+
+				.weedright{
+					position: absolute;
+					right:-16px;
+					top:20%;
+					z-index: 10;
+					-webkit-animation: ease-in-out infinite;
+					-webkit-animation-name: run2;
+					-webkit-animation-duration:7s;
+					transform-origin: bottom right;
+				}
+
+				@-webkit-keyframes run1 {
+					0% {
+						transform: rotate(1deg) translate(1px,0);
+				  }
+					50% {
+						transform: rotate(-0deg) translate(-0px,0);
+				  }
+					100% {
+						transform: rotate(1deg) translate(1px,0);
+					}
+				}
+				@-webkit-keyframes run2 {
+				  0% {
+						transform: rotate(2deg) translate(1px,0);
+				  }
+					50% {
+						transform: rotate(-0deg) translate(-0px,0);
+				  }
+					100% {
+						transform: rotate(2deg) translate(1px,0);
+					}
+
+				}
+				.skullybgrd{
+					position: absolute;
+					right:0;
+					bottom:20%;
+					z-index: 6
+				}
+
+				/* Wallet modal */
+
+				.walletModalWrap{
+					position: fixed;
+					display: none;
+					height:100%;
+					width:100%;
+					background-color:rgb(7, 20, 37,0.9);
+					z-index: 35
+				}
+				.walletConnBoard{
+					position: absolute;
+					/* display:none; */
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+
+				.wallettxt{
+					position: absolute;
+					display: flex;
+					flex-direction: column;
+					height: 290px;
+					justify-content: space-between;
+					top: 63px;
+					left: 85px;
+					color:white;
+					word-wrap: break-word;
+					/* background-color: pink; */
+
+					/* height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between; */
+
+				}
+
+				.infowallet{
+					/* height:160px;
+					width:456px; */
+					/* background-color:	pink */
+					font-family: 'Comic Neue';
+					height: 360px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					font-size:36px;
+					/* background-color: pink; */
+
+
+				}
+				.walletButton{
+			    margin-top: 17px;
+			    cursor: pointer;
+			    width: 56%;
+			    height: 60px;
+			    /* background: aliceblue; */
+
+				}
+				.walletButton:hover .walletButtTxt{
+					opacity:.5
+				}
+				.walletButton img{
+					position: absolute;
+				}
+				.connectWallTxt{
+					font-size: 24px;
+					font-family: 'Comic Neue';
+					padding-bottom: 8px;
+				}
+				.infoWallet div{
+					/* padding-bottom:40px */
+				}
+				.walletButtTxt{
+					position: relative;
+					top: 9px;
+					left: 13px;
+					font-size: 28px;
+					/* background-color: blue; */
+					text-align: center;
+					height: 10px;
+				}
+
+				.shortboard{
+					width: 140px;
+				}
+				.longboard{
+					width: 216px;
+				}
+				.backWallet{
+					position: absolute;
+					top: -20px;
+					right: -16px;
+					cursor:pointer;
+				}
+				.backWallet:hover{
+					transform:rotate(8deg)
+				}
+
+				/* error messages */
+				.errorMessageWrap{
+					position: absolute;
+					display:none;
+					width: 406px;
+					padding:30px 0 0 30px;
+					z-index: 60;
+					margin-left: -490px;
+					transition: margin .3s ease;
+				}
+
+				.errorMessage{
+					position: relative;
+			    top: -131px;
+			    left: 8px;
+			    width: 290px;
+			    color: white;
+			    font-family: 'Comic Neue';
+			    font-size: 18px;
+			    margin: 30px 0;
+			    width: 400px;
+			    padding: 0px 80px;
+
+				}
+				.errorMessage div{
+					text-align: center;
+				}
+				.errorBack{
+					position: absolute;
+					top: 44px;
+					right: -15px;
+					cursor:pointer;
+					z-index: 40
+				}
+
+				/* mobile burger */
+
+				.burger{
+					display:none
+				}
+				/* background bubbles */
+
+				.bubbles{
+				position: fixed;
+				width:100%;
+				height:100%;
+				overflow:hidden;
+				z-index: 30
+				}
+
+				.bubbles img:nth-child(1){
+					position: absolute;
+					bottom:0;
+					left:20%;
+  				animation: move 6s linear infinite;
+				}
+				.bubbles img:nth-child(2){
+					position: absolute;
+					bottom:0;
+					left:22%;
+					animation: move2 12s linear infinite;
+				}
+				.bubbles img:nth-child(3){
+					position: absolute;
+					bottom:0;
+					left:23%;
+					animation: move 10s linear infinite;
+				}
+
+				.bubbles img:nth-child(4){
+					position: absolute;
+					bottom:0;
+					left:73%;
+  				animation: move 7s linear infinite;
+				}
+				.bubbles img:nth-child(5){
+					position: absolute;
+					bottom:0;
+					left:70%;
+					animation: move2 11s linear infinite;
+				}
+				.bubbles img:nth-child(6){
+					position: absolute;
+					bottom:0;
+					left:68%;
+					animation: move 19s linear infinite;
+				}
+
+				@keyframes move {
+				  0%{
+				    transform: translateY(100%);
+				  }
+				  100% {
+				    transform: translateY(-350%);
+				  }
+				}
+				@keyframes move2 {
+				  0%{
+				    transform: translateY(100%);
+				  }
+				  100% {
+				    transform: translateY(-420%);
+				  }
+				}
+				/* skully */
+
+				.skullyWrap{
+					/* background-color:pink */
+					position: absolute;
+					display: flex;
+					justify-content: center;
+					flex-direction:column;
+					right: 16%;
+					bottom: 35%;
+					z-index: 6;
+					transform: rotate(11deg);
+
+				}
+				.skully{
+					padding-right:18px
+				}
+				.skullytxt{
+				}
+				.skullyWraptxt{
+					position: absolute;
+					display:flex;
+					justify-content: center;
+			    bottom: 146px;
+			    width: 196px;
+				}
+
+				/* Sock Modal Start */
+
+				.modalWrap{
+					display: flex;
+			    flex-direction: column;
+			    z-index: 30;
+			    position: absolute;
+			    left: 50%;
+			    top: 0;
+			    transform: translate(-50%, 0);
+			    /* background-color: blue; */
+			    margin-top: 160px;
+					/* height: calc(100vh - 200px);
+					width: calc(100vw - 727px);
+					max-width: 524px; */
+					height: 560px;
+				}
+				.paybadge{
+					position:absolute;
+					top: 24px;
+					left: 4px;
+				}
+				.paygoo{
+					position: absolute;
+			    top: 20px;
+			    right: 27px;
+				}
+
+					.fox{
+						position:fixed;
+						top: 250px;
+						z-index: -1;
+						transition: margin-left .5s ease;
+						margin-left:22px;
+					}
+
+					.sockboard{
+						height:100%;
+					}
+					.sockGifWrap{
+						position: absolute;
+						top:30px
+					}
+
+					.modalWrap:hover .fox{
+						margin-left:-150px;
+					}
+
+
+					.sock{
+						/* height:100%; */
+						/* background-color:blue; */
+					}
+
+					.dddsock{
+						position: absolute;
+				    display: flex;
+						justify-content: center;
+						width: 100%;
+						top: 5%;
+					}
+
+					.currentPrice{
+						position: absolute;
+						display:flex;
+						flex-direction: column;
+						justify-content: center;
+						top: 477px;
+						color: beige;
+						right: 75px;
+					}
+					/* buy socks */
+
+					.buysockz{
+						/* position: absolute; */
+						display: flex;
+						bottom: -46px;
+						justify-content: center;
+						/* height: 20%; */
+						/* width: 100%; */
+						cursor:pointer;
+						height:88px;
+						/* width:100%; */
+
+						/* background-color: beige; */
+						bottom: 42px;
+						position: relative;
+					}
+
+					.sockCountDown{
+						position: absolute;
+						top: 60px;
+						right: 70px;
+						color:beige
+					}
+
+							/* buy now hover */
+
+							.buysockz img:nth-child(1){
+								display:block
+							}
+
+							.buysockz img:nth-child(2){
+								display: none;
+								position: relative;
+								height: 116.7%;
+								width: 87.3%;
+								bottom: -1px;
+							}
+
+							.buysockz:hover img:nth-child(1){
+								display:none
+							}
+
+							.buysockz:hover img:nth-child(2){
+								display:block;
+							}
+
+					/* Buying Modal */
+
+					.buyModalWrap{
+						position:fixed;
+						display:none;
+						height:100%;
+						width:100%;
+						z-index: 20;
+						background-color:rgb(7, 20, 37,0.9);
+					}
+
+					.buyModal{
+						display: flex;
+						flex-direction: column;
+						z-index: 30;
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+
+						transition: margin-top .3s ease;
+						margin-top: 960px;
+					}
+					#buySockPanel{
+						display:block;
+					}
+					#boughtSockPanel{
+						display:none;
+						position: relative;
+						left: 1px;
+					}
+
+					.autoSize{
+						max-width: 100%;
+						height: auto;
+					}
+
+					.buycurrentPrice{
+						position: absolute;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						top: 82px;
+						color: beige;
+						right: 100px;
+					}
+					.incrementWrap{
+						position: absolute;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						top: 512px;
+						color: beige;
+						right: 79px;
+						font-family: "Comic Neue";
+						cursor: pointer;
+						width: 200px;
+						height: 26px;
+					}
+					.incrementTxt div{
+						width: 30px;
+						text-align: center;
+					}
+					.plus .minus{
+						font-family: "Wizards";
+					}
+					.incrementTxt{
+						display: flex;
+						justify-content: space-between;
+						position: absolute;
+						width: 100%;
+						padding: 0 41px;
+						font-size:32px;
+					}
+					.incrementCount{
+						position: absolute;
+						bottom: 38px;
+						font-size: 24px;
+						width: 100%;
+						text-align: center;
+						color: gray;
+					}
+
+					.shillopensea{
+						display: none;
+						justify-content: center;
+						width: 100%;
+						padding: 13px 103px;
+						position: relative;
+						top: -179px;
+						color: grey;
+						height: 88px;
+					}
+
+					.shillopensea div:hover{
+						cursor:pointer;
+						color:rgb(255, 255, 255,0.6)
+					}
+
+					.shillOstxt{
+						position:absolute;
+						top:22px;
+						width:100%;
+						font-family: 'Wizards';
+						font-size:28px;
+						width: 170px;
+						text-align: center;
+						color:white;
+						cursor:pointer;
+					}
+
+					.complimentToad{
+						position: absolute;
+						right: 15%;
+						bottom: 43%;
+						display: flex;
+						flex-direction: column;
+						width: 180px;
+					}
+					.complimentToad img:nth-child(1){
+						padding-left:30px;
+					}
+
+					.boughtBackground{
+						display:none;
+					}
+					.buyingsockz{
+						/* position: absolute; */
+						display: flex;
+						bottom: -46px;
+						justify-content: center;
+						/* height: 20%; */
+						width: 100%;
+						cursor:pointer;
+						height:88px;
+						width:100%;
+
+						/* background-color: beige; */
+						bottom: 184px;
+						position: relative;
+					}
+					/* buy now hover */
+
+					.buyingsockz img:nth-child(1){
+						display:block
+					}
+
+					.buyingsockz img:nth-child(2){
+						display:none;
+						position: relative;
+						height: 116.5%;
+						width: 77.1%;
+						bottom: -1px;
+
+
+					}
+
+					.buyingsockz:hover img:nth-child(1){
+						display:none
+					}
+
+					.buyingsockz:hover img:nth-child(2){
+						display:block;
+					}
+
+
+					/* font-size:15px; text-align: center;color:#aaa9a7;letter-spacing: 1px */
+
+					.buybubbles{
+						z-index: 30;
+						display:none;
+					}
+
+					.buybubbles img:nth-child(1){
+						position: absolute;
+						bottom:0;
+						left:6%;
+						animation: move 20s linear infinite;
+					}
+					.buybubbles img:nth-child(2){
+						position: absolute;
+						bottom:0;
+						left:15%;
+						animation: move2 15s linear infinite;
+					}
+					.buybubbles img:nth-child(3){
+						position: absolute;
+						bottom:0;
+						left:18%;
+						animation: move 13s linear infinite;
+					}
+
+					.buybubbles img:nth-child(4){
+						position: absolute;
+						bottom:0;
+						left:76%;
+						animation: move 8s linear infinite;
+					}
+					.buybubbles img:nth-child(5){
+						position: absolute;
+						bottom:0;
+						left:81%;
+						animation: move2 13s linear infinite;
+					}
+					.buybubbles img:nth-child(6){
+						position: absolute;
+						bottom:0;
+						left:72%;
+						animation: move 22s linear infinite;
+					}
+
+
+					.buyeditInfoWrap{
+						position: absolute;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						top: 600px;
+						color: #E5E3E0;
+						width: 100%;
+					}
+
+					.boughteditInfoWrap{
+						position: absolute;
+						display: none;
+						flex-direction: column;
+						justify-content: center;
+						top: 599px;
+						color: #E5E3E0;
+						width: 100%;
+					}
+					.buyGreyBoard{
+						position: absolute;
+						top: 56px;
+						z-index: -1;
+						right: -35px;
+						height: 97%;
+					}
+					/* Edition info */
+
+					.editInfoWrap{
+						position: absolute;
+						display:flex;
+						flex-direction: column;
+						justify-content: center;
+						top: 570px;
+						color:#E5E3E0;
+						padding: 0px 55px 0 80px;
+
+					}
+					.tempImg{
+						width: 100%;
+						padding: 0 20%;
+						padding-bottom:5px;
+					}
+					.editInfo{
+						font-family: 'Comic Neue';
+						font-size: 20px;
+						text-align: center;
+						letter-spacing: 1px;
+					}
+					.buyeditInfoWrap .editInfo{
+						padding: 0 90px;
+
+					}
+					.boughteditInfoWrap .editInfo{
+						margin: 0 120px;
+					}
+					.moreinfo{
+
+					}
+					.editTitle{
+						font-family: 'FatFrank';
+						font-size:22px;
+						text-align: center;
+					}
+
+					.learnmore{
+						display: flex;
+						justify-content: center;
+						width:100%;
+
+						font-family: 'Comic Neue';
+						font-weight: bold;
+						color:#aaa9a7;
+						text-decoration: underline;
+
+						cursor:pointer;
+
+						padding-top: 1px;
+					}
+
+					/* Buy Sockz */
+
+					.buyNowTxt, .infobuyNowTxt{
+						position:absolute;
+						bottom: 23px;
+						font-family: 'Wizards';
+						font-size:40px;
+						color:white;
+						text-align: center;
+						padding: 0 130px;
+					}
+					.buysockz:hover .buynowtxt{
+						color:#E5E3E0;
+					}
+
+					/* Sell & Redeem buttons */
+
+					/*
+					.sellredeemDisabled{
+						display: flex;
+						justify-content: space-between;
+						width: 100%;
+						padding: 0 73px;
+						position: relative;
+						bottom: 42px;
+						cursor:default;
+					} */
+					.sellredeemDisabled{
+						display: flex;
+						justify-content: space-between;
+						width: 100%;
+						padding: 0 73px;
+						position: relative;
+						bottom: 42px;
+						cursor:default;
+						color:grey;
+					  pointer-events: none;
+						/* background-color:magenta; */
+					}
+					.sellredeem{
+						display: none;
+						justify-content: space-between;
+						width: 100%;
+						padding: 0 73px;
+						position: relative;
+						bottom: 42px;
+						cursor:default;
+						color:white;
+						cursor:pointer;
+						/* background-color:magenta; */
+					}
+
+					.selltxt{
+						position:absolute;
+						top:8px;
+						width:100%;
+						font-family: 'Wizards';
+						font-size:32px;
+						width: 170px;
+						text-align: center;
+					}
+					.sell, .redeeming{
+						cursor:pointer;
+					}
+					.sell {
+						padding-right:10px;
+					}
+
+					#sellowns{
+						display:block
+					}
+					#sellownshover{
+						display:none;
+					}
+
+					.sell:hover #sellowns{
+						display:none
+					}
+					.sell:hover #sellownshover{
+						display:block;
+					}
+
+					#redeemowns{
+						display:block
+					}
+					#redeemownshover{
+						display:none;
+					}
+
+					.redeeming:hover #redeemowns{
+						display:none
+					}
+					.redeeming:hover #redeemownshover{
+						display:block;
+					}
+
+			/* info modal */
+
+			.infoModalWrap{
+				position:absolute;
+				display:none;
+				height:100%;
+				width:100%;
+				z-index: 40;
+				background-color:rgb(7, 20, 37,0.9);
+
+
+			}
+			.infobckbutton:hover{
+				transform:rotate(4deg)
+			}
+			.infotransition{
+				position: relative;
+				transition: margin .5s ease;
+				margin-top: 1560px;
+			}
+
+			.infomodal{
+				display: flex;
+				flex-direction: column;
+				z-index: 30;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				/* background-color: pink; */
+				transition: margin-top .3s ease;
+				margin-top: 130px;
+				padding-bottom:60px;
+
+			}
+
+			.goback{
+				position: absolute;
+				top: -21px;
+				right: -25px;
+				cursor:pointer;
+			}
+
+			.infoParagraph{
+				/* height:160px; */
+				width:456px;
+				/* background-color:	pink */
+				font-family: 'Comic Neue';
+
+			}
+
+			.infoText{
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				height: 740px;
+				justify-content: space-between;
+				top: 90px;
+				left: 85px;
+				color:white;
+				word-wrap: break-word
+			}
+			.infoTitle{
+				font-size:26px;
+				padding-bottom:10px;
+			}
+			.infoBody{
+				font-size:19px;
+				opacity:.6;
+				font-weight: lighter;
+			}
+
+			.infoButtons{
+				position:absolute;
+				bottom: 123px;
+				left: 61px;
+			}
+			.buybuy{
+				height:60px;
+				width:470px;
+				padding-bottom:100px
+			}
+
+			.twitterOS{
+				height:50px;
+				width:430px;
+				display: flex;
+				justify-content: space-evenly;
+				width: 100%;
+				position: relative;
+				bottom: 42px;
+				cursor:pointer;
+				color:white;
+			}
+			.buysockzinfo{
+				display: flex;
+				bottom: -46px;
+				justify-content: center;
+				width: 100%;
+				cursor:pointer;
+				height:88px;
+				width:101%;
+
+				bottom: 42px;
+				position: relative;
+			}
+
+			/* buy now hover */
+
+			.buysockzinfo img:nth-child(1){
+				display:block
+			}
+
+			.buysockzinfo img:nth-child(2){
+				display:none;
+				position: relative;
+				height: 117.1%;
+				width: 96.4%;
+				bottom: -1px;
+			}
+
+			.buysockzinfo:hover img:nth-child(1){
+				display:none
+			}
+
+			.buysockzinfo:hover img:nth-child(2){
+				display:block;
+			}
+
+			.selltxt:hover{
+				opacity:0.5;
+			}
+
+
+			.leftBoardWrap{
+				/* background-color:pink; */
+				width:100%;
+				overflow: hidden;
+			}
+			.rightBoardWrap{
+				/* background-color:blue; */
+				width:100%;
+				overflow: hidden;
+			}
+
+			/* to move up */
+			.currentPriceTxt{
+				font-size:15px;
+				text-align: center;
+				color:#aaa9a7;
+				letter-spacing: 1px;
+			}
+			.tickerTxt{
+				font-family: 'Comic Neue';
+				font-weight: regular;
+				font-size: 32px;
+				letter-spacing: 1px;
+				padding-bottom:2px;
+				text-align: center;
+			}
+			.countDownTxt{
+				font-family: 'Comic Neue';
+				font-weight: Regular;
+				font-size: 24px;
+			}
+			.priceTxt{
+				font-family: 'Comic Neue';
+				font-size: 28px;
+
+			}
+			.sellredeemwrap{
+				display:flex;
+			}
+
+		@media only screen and (max-width: 1800px) {
+
+			.xxlMidBoard{
+				width:25%;
+			}
+		}
+
+		@media only screen and (max-width: 1400px) {
+
+
+						.xxlMidBoard{
+							display:none
+						}
+
+		}
+		@media only screen and (max-width: 1200px) {
+			.skullyWrap{
+				display:none;
+			}
+			.brainyfrog{
+				display:none;
+			}
+		}
+		@media only screen and (max-width: 900px) {
+			.redeem{
+				display:none;
+			}
+			.leftBoardWrap{
+				width:50vw;
+			}
+			.rightBoardWrap{
+				width:50vw;
+			}
+			.boardXXLR{
+				margin-top: 0px;
+			}
+			@media all and (max-width: 420px) and (min-height: 320px){
+				.sockboard img{
+					width: 410px;
+				}
+				.sockCountDown {
+				    top: 41px;
+				    right: 39px;
+				}
+				.logo {
+				    left: calc(50vw - 69px);
+				}
+
+				.editInfoWrap{
+					top: 63%;
+					margin: 0 50px;
+				}
+				.editInfo{
+					font-size:14px;
+					width: 260px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+				.currentPricetxt{
+					font-size:14px;
+				}
+				.priceTxt{
+					font-size:25px;
+					font-family: 'Comic Neue';
+					font-weight: regular;
+					letter-spacing: 1px;
+
+				}
+				.tickerTxt{
+					font-size: 21px;
+					padding: 0;
+
+				}
+				.countDownTxt{
+					font-size: 25px;
+				}
+				.board{
+					padding:10px 10px 0 10px;
+				}
+				.modalWrap{
+					margin-top: 130px;
+					max-width: 100%;
+					height:unset;
+				}
+				.buyModalWrap{
+					margin-top: 100px;
+					max-width: 100%;
+					height:unset;
+				}
+
+				.buyNowTxt{
+					text-align: center;
+					/* margin: 0 130px; */
+					white-space: nowrap;
+					/* background: black; */
+					bottom: 13px;
+					font-size: 29px;
+				}
+
+				.infobuyNowTxt{
+					position: absolute;
+					bottom: 23px;
+					font-family: 'Wizards';
+					font-size: 40px;
+					color: white;
+					text-align: center;
+				}
+				#buyhover{
+					display:none;
+				}
+				/* cancel hover image change */
+
+				.buysockz{
+					padding: 0 27px;
+					height: 100%;
+					width: 100%;
+					bottom:33px
+				}
+				.buysockz img:nth-child(1){
+					display:block;
+					max-width: 316px;
+					max-height: 100%;
+				}
+
+				.buysockz img:nth-child(2){
+					display: none;
+				}
+
+				.buysockz:hover img:nth-child(1){
+					display:block
+				}
+
+				.buysockz:hover img:nth-child(2){
+					display:none;
+				}
+				.bubbles{
+					display:none;
+				}
+				.cloudleft img{
+					display:none;
+					/* width: 115px; */
+				}
+				.cloudright img{
+					display:none;
+					/* width: 150px; */
+				}
+				.buyModal{
+					/* top:40% */
+				}
+				.weedleft, .weedright{
+					display:none
+				}
+
+				.buyingsockz{
+					display: block;
+					width: 100%;
+					height: 100%;
+					/* background: aliceblue; */
+					display: flex;
+					bottom: 117px;
+				}
+
+
+				.buyingsockz img:nth-child(1){
+					display:block
+				}
+
+				.buyingsockz:hover img:nth-child(1){
+					display:block
+				}
+
+				.buyingsockz:hover img:nth-child(2){
+					display:none;
+				}
+
+				.buyingsockz img{
+					width:290px
+				}
+
+				.fox{
+					display:none;
+				}
+			.sockboard{
+				display: flex;
+				justify-content: center;
+			}
+			.mobileBoard{
+				height:100px
+			}
+			.mobileLogo{
+				height:50px
+			}
+			.bannerButtons{
+				/* display:none */
+			}
+			.logo{
+		    top: 20px;
+		    left: 51px;
+			}
+			.leftgoo {
+				display:none
+			}
+			.rightgoo{
+				right: 47%;
+				top: 32px;
+				width: 100px;
+			}
+			.modalWrap{
+				top: 50%;
+				transform: translate(-50%, calc(-50% - 60px));
+			}
+			.buyModalWrap{
+				top: 50%;
+				transform: translate(-50%, calc(-50% - 60px));
+			}
+			.smokey{
+				display:none
+			}
+			.bkrgdArrow{
+				display:none
+			}
+			.sockCountDown{
+				top: 53%;
+		    right: 10%;
+			}
+			.currentPrice{
+				color: beige;
+				top: 6%;
+				right: 10%;
+			}
+
+			.burger{
+				display:block;
+				position: absolute;
+				top: 31px;
+				right: 43px;
+				z-index: 20;
+				cursor:pointer;
+			}
+			.burger img{
+				width:40px;
+			}
+			.sellredeemDisabled img{
+				height:40px
+			}
+			.sellredeem img{
+				height:40px
+			}
+			.buynowMobile{
+				height:70%
+			}
+			.editInfoWrap{
+				padding:0 0 0 2px;
+				bottom: 135px;
+				flex-direction: row;
+				padding:0;
+				margin:0;
+				width:100%
+			}
+			.sellredeemDisabled{
+				padding: 0 53px;
+				bottom: 37px;
+				display:none
+			}
+			.sellredeem{
+				display: flex;
+
+				padding: 0 53px;
+				bottom: 37px;
+			}
+			.sellredeem{
+				padding: 0 53px;
+				bottom: 37px;
+			}
+			.selltxt{
+				width:123px;
+				top:4px;
+			}
+			.buyModal{
+				left:100%;
+				width: 100%;
+			}
+			/* paste up */
+			.buyingsockz img{
+				width: 290px;
+			}
+			.buycurrentPrice{
+				top:54px;
+				right:63px
+			}
+			.incrementTxt{
+				font-size:25px
+				padding:0;
+			}
+
+			/* banner buttons */
+			.bannerButtons{
+				width:190px;
+				top: 24px;
+				right: 35px;
+			}
+
+			.burger{
+				display:none;
+			}
+			.connectbck img, .connectedbck img{
+				width:100%;
+			}
+			.questions img{
+				width: 100%
+			}
+			.connectTxt, .connectedTxt{
+				right: 65px;
+				top: 1px;
+				width:105px
+			}
+			.connectWallTxt{
+				font-size: 20px;
+			}
+			.rightgoo{
+				top:41px
+			}
+			/* .connectedbck img:nth-child(2) {
+			    width: 175px;
+			} */
+			.connected img:nth-child(1) {
+			    width: 100%;
+			}
+
+			/* infomodal */
+
+			.infomodal{
+				width:90%;
+				transform:translate(-50%, 0);
+				margin-top:0;
+			}
+			.infomodal img{
+
+			}
+			.infotransition{
+				margin-top:20px !important
+			}
+			.infoTitle{
+				font-size: 18px;
+				padding:0;
+			}
+			.infoBody{
+				font-size:15px;
+				width: calc(100vw - 100px);
+			}
+			.infoText{
+				top: 0;
+				left: 0;
+				margin: 10% 30% 0 10%;
+				height: 70%
+			}
+			.line img{
+				width: calc(100vw - 100px);
+			}
+			.infoButtons{
+				bottom: 0;
+				left: 0;
+				width:100%;
+				/* background-color:pink */
+			}
+			.buysockzinfo:hover img:nth-child(1) {
+				display:block
+			}
+
+			.buysockzinfo:hover img:nth-child(2) {
+				display:none
+			}
+			.buybuy{
+				width:100%;
+			}
+			.buysockzinfo{
+				padding: 0 20px;
+				bottom: -86px;
+				display: block;
+			}
+			.buynowMobile{
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.boughteditInfoWrap{
+				top: 414px;
+				width: 100%;
+				justify-content: center;
+				flex-direction: row;
+				display: none;
+				margin:0;
+			}
+			.twitterOS{
+				bottom: -50px;
+			}
+			.infobuyNowTxt{
+				text-align: center;
+				white-space: nowrap;
+				bottom: 50px;
+				font-size: 29px;
+				position: relative;
+				color: white;
+				width: 100%;
+				padding:0;
+				/* background: aliceblue; */
+			}
+			.infoModalWrap{
+				height: 1300px;
+			}
+			.infoTitle{
+				padding-bottom:2px !important
+			}
+			.infobckbutton{
+				width: 70%;
+			}
+			.goback{
+				right: -74px;
+			}
+			.buyModal{
+				margin-top:30px !important;
+			}
+			.buyeditInfoWrap{
+				top: 414px;
+				flex-direction: row;
+
+			}
+
+			.infoWallet{
+				/* background-color: black; */
+				height: 100%;
+				padding-bottom: 100px;
+			}
+			.walletBckMobile{
+				width: 100vw;
+			}
+			.walletBackButton{
+				width: 140px;
+			}
+			.wallettxt{
+				margin: 32px 50px;
+				top: 0;
+				left: 0;
+			}
+			.walletButton{
+				/* height:20px */
+				margin-top:5px;
+				padding-top: 10px;
+			}
+			.walletButton img{
+				height:50px
+			}
+			.walletButtTxt{
+				top: 6px;
+				left: 3px;
+			}
+			.walletConnBoard{
+				width: 100%;
+			}
+			.backWallet{
+				top: -33px;
+				right: 14px;
+			}
+			.incrementWrap{
+				top: 0;
+				right: 0;
+				/* width: 410px; */
+				padding: 0;
+				width: 100%;
+				font-size: 23px;
+				position: absolute;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				top: 352px;
+				color: #E5E3E0;
+			}
+			.incrementTxt{
+				padding:0;
+				width:100%;
+				width: 593px;
+				font-size: 23px;
+				padding-left: 327px;
+				padding-right: 164px;
+			}
+			.incrementCount{
+				font-size:15px;
+				bottom:31px;
+				width: 593px;
+				font-size: 18px;
+				padding-left: 327px;
+				padding-right: 164px;
+			}
+			.selltxt{
+				width: 120px;
+				font-size:24px
+			}
+			.twitterOS img {
+			  height: 40px;
+			}
+			.twitterOS .selltxt{
+				width:121px
+			}
+			.shillopensea{
+				width:100%;
+				top:-148px;
+				padding: 0 50px;
+			}
+			.shillopensea img{
+				height:40px
+			}
+			.shillOstxt{
+				position:relative;
+				width:100%;
+				top:35px
+			}
+			.complimentToad img:first-child{
+				display:none
+			}
+			/* error message */
+			.errorImg{
+				width: 300px
+			}
+			.errorMessage{
+				overflow: hidden;
+				height: 63px;
+				top: -112px;
+				left: -52px;
+			}
+			.errorMessageWrap{
+				width:300px;
+				padding: 10px 0 0 10px;
+			}
+			.errorTitle, .errorText{
+				font-size: 16px;
+			}
+			.errorBack{
+				top: 14px;
+			}
+			.buyeditInfoWrap .editInfo {
+    		padding: 0 0px;
+			}
+			.boughteditInfoWrap .editInfo {
+			  margin: 0px 70px;
+			}
+			.sell{
+				padding-right:30px;
+			}
+		}
+		@media all and (max-width: 320px) and (min-height: 568px){
+
+			.buyModal {
+		    margin-top: 20px !important;
+			}
+			.sockboard img {
+		    width: 310px;
+			}
+			.sellredeem {
+    		padding: 0 23px;
+			}
+			.tickerTxt, .countDownTxt {
+    		font-size: 18px !important;
+			}
+			.currentPrice{
+				right:12%;
+			}
+			.sockCountDown{
+				right:12%;
+				top: 51%;
+			}
+			.editInfo {
+			  font-size: 10px;
+				width:210px
+			}
+			.buysockz{
+				bottom: 22px;
+			}
+			.buyingsockz{
+				bottom: 99px;
+			}
+			.buyingsockz img {
+			  width: 250px;
+			}
+			.buyNowTxt{
+				bottom: 11px;
+			}
+			.sellredeem, .sellredeemDisabled{
+				bottom: 20px
+			}
+			.buyeditInfoWrap {
+				top: 314px;
+			}
+			.incrementWrap{
+				top:262px
+			}
+			.incrementTxt{
+				padding-right: 194px;
+			}
+			.incrementCount{
+				font-size: 14px;
+				padding-right: 194px;
+				padding-left: 320px;
+			}
+
+			.infobck{
+				height: 690px;
+			}
+			.bannerButtons{
+				width:150px
+			}
+
+			.bannerButtons div {
+    		padding-left: 0px;
+			}
+			.bannerButtons{
+				right: 19px;
+			}
+			.connectTxt, .connectedTxt{
+				right:45px;
+				font-size:25px;
+				width: 94px;
+			}
+			.infotransition {
+		    margin-top: 80px !important;
+			}
+			.buyingsockz .buyNowTxt{
+				bottom:7px
+			}
+			.buysockz img:nth-child(1) {
+    		max-width: 100%;
+			}
+			.buyNowTxt{
+				font-size: 25px;
+			}
+			.editInfoWrap{
+				bottom: 123px;
+			}
+			.priceTxt{
+				font-size:20px !important;
+			}
+			.currentPriceTxt{
+				font-size: 12px !important;
+			}
+			.buycurrentPrice .dH2{
+				font-size:12px !important;
+			}
+			.buycurrentPrice {
+		    top: 43px;
+		    right: 60px;
+			}
+			.boughteditInfoWrap {
+    		top: 316px;
+			}
+			.shillopensea{
+				top: -108px;
+			}
+			.shillopensea img {
+		    height: 30px;
+			}
+			.shillOstxt{
+				font-size: 20px;
+				top: 25px;
+			}
+			.buyModal {
+		    margin-top: 40px !important;
+			}
+		}
