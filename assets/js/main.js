@@ -34,6 +34,24 @@ ismobile();
   var provider;
   var address;
   var isConnected = false;
+  var mintCount = 0;
+  var redeemCount = 0;
+
+  async function fetchSupply() {
+    if (typeof window.ethereum !== 'undefined'){
+      const provider1 = new ethers.providers.Web3Provider(window.ethereum);
+      const contract = new ethers.Contract(contractAddress, Sockz, provider1);
+      const data = await contract.totalSupply();
+      mintCount = data;
+      const total = "/7025";
+      const num = mintCount.toString();
+      const minted = num + total;
+      document.getElementById("incrementCount").innerText = minted;
+      document.getElementById("incrementCount2").innerText = minted;
+    }
+  }
+
+  fetchSupply();
 
   async function requestMetaMask() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -66,15 +84,20 @@ ismobile();
   }
 
   document.getElementById("metaMask").addEventListener('click', connectMetaMask);
+  document.getElementById("browserWallet").addEventListener('click', connectMetaMask);
 
   async function connectWalletConnect(){
     const webProvider = new WalletConnectProvider({
       infuraId: "27e484dcd9e3efcfd25a83a78777cdf1",
     });
     await webProvider.enable();
-    provider = new webProvider.Web3Provider(webProvider);
+    provider = new ethers.providers.Web3Provider(webProvider);
     signer = provider.getSigner();
     walletModalWrap.style.display = "none";
+    address = await signer.getAddress();
+    document.getElementById("address").innerHTML = address;
+    document.getElementById("mintingNow").innerHTML = "Mint Sockz";
+    isConnected = true;
   }
 
   document.getElementById("walletConnect").addEventListener('click', connectWalletConnect);
@@ -256,7 +279,7 @@ ismobile();
   function minusone(){
     var currentNum = incrementValue.innerText;
 
-    if (currentNum != 0) {
+    if (currentNum != 1) {
       currentNum--;
       incrementValue.innerText = currentNum;
     }
@@ -286,6 +309,10 @@ ismobile();
       else {
         window.alert("please choose how many sockz you would like to mint");
       }
+    }
+    else {
+      connectToWallet()
+      return
     }
 
     buybutton.style.display = "none";

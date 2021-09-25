@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
 
     <title>TOADZ SOCKZ</title>
+    <link rel="icon" type="image/png" href="favicon.png"/>
 
   </head>
 
@@ -80,11 +81,11 @@
           <div class="fire">
             <img src="assets/images/banner/fire.png">
           </div>
-          <div class="redeemedNum">6969 Redeemed</div>
+          <div class="redeemedNum">0 Redeemed</div>
 
         </div>
 
-        <div class="redeemTxtHover noselect">9999 Sockz Left</div>
+        <div class="redeemTxtHover noselect">7025 Sockz Left</div>
 
       </div>
 
@@ -241,7 +242,7 @@
               <img src="assets/images/wallet/line.png">
             </div>
 
-            <div class="walletButton" onclick="showError()">
+            <div id="browserWallet" class="walletButton">
               <img src="assets/images/wallet/largeboard.png">
               <div class="walletButtTxt longboard">
                 Browser Wallet
@@ -307,7 +308,7 @@
 
             <div class="sockCountDown">
               <div class="tickerTxt noselect">($Toadz)</div>
-              <div class="countDownTxt noselect" style="text-align: center;font-size:24px;color:#aaa9a7;">6969/6969</div>
+              <div id="incrementCount" class="countDownTxt noselect" style="text-align: center;font-size:24px;color:#aaa9a7;">0/7025</div>
             </div>
 
             <div class="currentPrice">
@@ -335,31 +336,30 @@
 
           <div class="sellredeemDisabled">
             <div class="sell">
-              <div class="selltxt">Sell</div>
+              <div class="selltxt">OpenSea</div>
 
               <a href="https://opensea.io" target="_blank">
               <img src="assets/images/modal/sellredeem.svg">
               </a>
             </div>
             <div class="redeeming">
-              <div class="selltxt">Redeem</div>
+              <div class="selltxt">Redeem(soon)</div>
               <img src="assets/images/modal/sellredeem.svg">
             </div>
           </div>
 
           <div class="sellredeem">
-            <div class="sell" onclick="console.log('SELL lFG')">
-              <div class="selltxt">Sell</div>
-              <img id="sellowns" src="assets/images/modal/sellOwns.png">
-              <img id="sellownshover" src="assets/images/modal/sellOwnsHover.png">
+            <div class="sell">
+              <div class="selltxt" onclick="window.open('https://opensea.io', '_blank');">OpenSea</div>
+              <img id="sellowns" src="assets/images/modal/redeemOwns.png">
+              <img id="sellownshover" src="assets/images/modal/redeemOwnsHover.png">
             </div>
             <div class="redeeming" onclick="console.log('REDEEM LFG')">
-              <div class="selltxt">Redeem</div>
-              <img id="redeemowns" src="assets/images/modal/redeemOwns.png" >
-              <img id="redeemownshover" src="assets/images/modal/redeemOwnsHover.png" >
+              <div class="selltxt">Redeem(soon)</div>
+              <img id="redeemowns" src="assets/images/modal/sellOwns.png" >
+              <img id="redeemownshover" src="assets/images/modal/sellOwnsHover.png" >
             </div>
           </div>
-
 
           <div class="fox">
             <img src="assets/images/bkgrd/fox.png">
@@ -415,21 +415,21 @@
 
               </div>
 
-              <div class="incrementCount">6969/6969 Left</div>
+              <div id="incrementCount2" class="incrementCount">0/7025 Minted</div>
 
             </div>
 
             <div class="buyeditInfoWrap">
               <div class="editInfo noselect">
                 <div class="" style="color:white;padding-bottom:3px">Sockz (Edition 0)</div>
-                <div class="">Buying sockz now pls</div>
+                <div class="">Mint sockz now pls</div>
               </div>
             </div>
 
             <div class="boughteditInfoWrap">
               <div class="editInfo noselect">
                 <div class="" style="color:white;padding-bottom:3px">Sockz (Edition 0)</div>
-                <div class="">Bought sockz thx</div>
+                <div class="">Minted sockz thx</div>
               </div>
             </div>
 
@@ -514,7 +514,7 @@
                 <div class="infoTitle">How It Works:
                 </div>
                 <div class="infoBody">
-SOCKZ (Edition 0) are claimable by all CrypToadz Holder with a maximum supply of 6969 SOCKZ.
+SOCKZ (Edition 0) are claimable by all CrypToadz Holder with a maximum supply of 7025 SOCKZ.
                   <br>
 You can transfer, sell, or trade the NFT anytime on a variety of platforms. To receive a pair shipped to your front door, you have to redeem it.
                 </div>
