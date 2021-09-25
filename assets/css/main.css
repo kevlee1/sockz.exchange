@@ -288,7 +288,7 @@ body{
 		}
 
 			.redeem{
-				cursor:pointer
+				cursor: initial;
 			}
 					.redeembck img:nth-child(1){
 						display:block
@@ -631,6 +631,16 @@ body{
 					height: 10px;
 				}
 
+				.walletButtTxtSoon{
+					position: relative;
+					top: 16px;
+					left: 13px;
+					font-size: 18px;
+					/* background-color: blue; */
+					text-align: center;
+					height: 10px;
+				}
+
 				.shortboard{
 					width: 140px;
 				}
@@ -817,6 +827,10 @@ body{
 					.sockboard{
 						height:100%;
 					}
+					.sockGifWrap{
+						position: absolute;
+						top:30px
+					}
 
 					.modalWrap:hover .fox{
 						margin-left:-150px;
@@ -940,10 +954,10 @@ body{
 					}
 					.incrementWrap{
 						position: absolute;
-						display: block;
+						display: flex;
 						flex-direction: column;
 						justify-content: center;
-						top: 508px;
+						top: 512px;
 						color: beige;
 						right: 79px;
 						font-family: "Comic Neue";
@@ -977,7 +991,7 @@ body{
 
 					.shillopensea{
 						display: none;
-						justify-content: space-between;
+						justify-content: center;
 						width: 100%;
 						padding: 13px 103px;
 						position: relative;
@@ -1109,7 +1123,7 @@ body{
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
-						top: 612px;
+						top: 600px;
 						color: #E5E3E0;
 						width: 100%;
 					}
@@ -1119,7 +1133,7 @@ body{
 						display: none;
 						flex-direction: column;
 						justify-content: center;
-						top: 616px;
+						top: 599px;
 						color: #E5E3E0;
 						width: 100%;
 					}
@@ -1153,6 +1167,13 @@ body{
 						text-align: center;
 						letter-spacing: 1px;
 					}
+					.buyeditInfoWrap .editInfo{
+						padding: 0 90px;
+
+					}
+					.boughteditInfoWrap .editInfo{
+						margin: 0 120px;
+					}
 					.moreinfo{
 
 					}
@@ -1179,7 +1200,7 @@ body{
 
 					/* Buy Sockz */
 
-					.buyNowTxt{
+					.buyNowTxt, .infobuyNowTxt{
 						position:absolute;
 						bottom: 23px;
 						font-family: 'Wizards';
@@ -1187,11 +1208,7 @@ body{
 						color:white;
 						text-align: center;
 						padding: 0 130px;
-						overflow: hidden;
-						white-space: nowrap;
-						text-overflow: ellipsis;
 					}
-
 					.buysockz:hover .buynowtxt{
 						color:#E5E3E0;
 					}
@@ -1235,15 +1252,29 @@ body{
 
 					.selltxt{
 						position:absolute;
-						top:10px;
+						top:8px;
 						width:100%;
 						font-family: 'Wizards';
-						font-size:28px;
+						font-size:32px;
 						width: 170px;
 						text-align: center;
 					}
+
+					.selltxt2{
+						position:absolute;
+						top:12px;
+						width:100%;
+						font-family: 'Wizards';
+						font-size:24px;
+						width: 170px;
+						text-align: center;
+					}
+
 					.sell, .redeeming{
 						cursor:pointer;
+					}
+					.sell {
+						padding-right:10px;
 					}
 
 					#sellowns{
@@ -1444,6 +1475,9 @@ body{
 				font-size: 28px;
 
 			}
+			.sellredeemwrap{
+				display:flex;
+			}
 
 		@media only screen and (max-width: 1800px) {
 
@@ -1456,14 +1490,8 @@ body{
 
 
 						.xxlMidBoard{
-							/* width:20%; */
 							display:none
 						}
-						/* .sockboard img{
-							max-height: 100%;
-							max-width: 100%;
-							min-width: 360px;
-						} */
 
 		}
 		@media only screen and (max-width: 1200px) {
@@ -1489,7 +1517,7 @@ body{
 			}
 			@media all and (max-width: 420px) and (min-height: 320px){
 				.sockboard img{
-					width: 100%
+					width: 410px;
 				}
 				.sockCountDown {
 				    top: 41px;
@@ -1504,12 +1532,12 @@ body{
 					margin: 0 50px;
 				}
 				.editInfo{
-					font-size:14px
+					font-size:14px;
+					width: 260px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
 				}
-				.brownBoardTxt{
-					/* font-size:20px */
-				}
-
 				.currentPricetxt{
 					font-size:14px;
 				}
@@ -1537,7 +1565,7 @@ body{
 					height:unset;
 				}
 				.buyModalWrap{
-					margin-top: 130px;
+					margin-top: 100px;
 					max-width: 100%;
 					height:unset;
 				}
@@ -1549,6 +1577,15 @@ body{
 					/* background: black; */
 					bottom: 13px;
 					font-size: 29px;
+				}
+
+				.infobuyNowTxt{
+					position: absolute;
+					bottom: 23px;
+					font-family: 'Wizards';
+					font-size: 40px;
+					color: white;
+					text-align: center;
 				}
 				#buyhover{
 					display:none;
@@ -1600,9 +1637,9 @@ body{
 					display: block;
 					width: 100%;
 					height: 100%;
-					background: aliceblue;
+					/* background: aliceblue; */
 					display: flex;
-					bottom: 120px;
+					bottom: 117px;
 				}
 
 
@@ -1619,7 +1656,7 @@ body{
 				}
 
 				.buyingsockz img{
-					width:320px
+					width:290px
 				}
 
 				.fox{
@@ -1636,7 +1673,7 @@ body{
 				height:50px
 			}
 			.bannerButtons{
-				display:none
+				/* display:none */
 			}
 			.logo{
 		    top: 20px;
@@ -1696,7 +1733,11 @@ body{
 			}
 			.editInfoWrap{
 				padding:0 0 0 2px;
-				top:66%
+				bottom: 135px;
+				flex-direction: row;
+				padding:0;
+				margin:0;
+				width:100%
 			}
 			.sellredeemDisabled{
 				padding: 0 53px;
@@ -1715,7 +1756,393 @@ body{
 			}
 			.selltxt{
 				width:123px;
-				top:2px;
+				top:4px;
+			}
+			.buyModal{
+				left:100%;
+				width: 100%;
+			}
+			/* paste up */
+			.buyingsockz img{
+				width: 290px;
+			}
+			.buycurrentPrice{
+				top:54px;
+				right:63px
+			}
+			.incrementTxt{
+				font-size:25px
+				padding:0;
 			}
 
+			/* banner buttons */
+			.bannerButtons{
+				width:190px;
+				top: 24px;
+				right: 35px;
+			}
+
+			.burger{
+				display:none;
+			}
+			.connectbck img, .connectedbck img{
+				width:100%;
+			}
+			.questions img{
+				width: 100%
+			}
+			.connectTxt, .connectedTxt{
+				right: 65px;
+				top: 1px;
+				width:105px
+			}
+			.connectWallTxt{
+				font-size: 20px;
+			}
+			.rightgoo{
+				top:41px
+			}
+			/* .connectedbck img:nth-child(2) {
+			    width: 175px;
+			} */
+			.connected img:nth-child(1) {
+			    width: 100%;
+			}
+
+			/* infomodal */
+
+			.infomodal{
+				width:90%;
+				transform:translate(-50%, 0);
+				margin-top:0;
+			}
+			.infomodal img{
+
+			}
+			.infotransition{
+				margin-top:20px !important
+			}
+			.infoTitle{
+				font-size: 18px;
+				padding:0;
+			}
+			.infoBody{
+				font-size:15px;
+				width: calc(100vw - 100px);
+			}
+			.infoText{
+				top: 0;
+				left: 0;
+				margin: 10% 30% 0 10%;
+				height: 70%
+			}
+			.line img{
+				width: calc(100vw - 100px);
+			}
+			.infoButtons{
+				bottom: 0;
+				left: 0;
+				width:100%;
+				/* background-color:pink */
+			}
+			.buysockzinfo:hover img:nth-child(1) {
+				display:block
+			}
+
+			.buysockzinfo:hover img:nth-child(2) {
+				display:none
+			}
+			.buybuy{
+				width:100%;
+			}
+			.buysockzinfo{
+				padding: 0 20px;
+				bottom: -86px;
+				display: block;
+			}
+			.buynowMobile{
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.boughteditInfoWrap{
+				top: 414px;
+				width: 100%;
+				justify-content: center;
+				flex-direction: row;
+				display: none;
+				margin:0;
+			}
+			.twitterOS{
+				bottom: -50px;
+			}
+			.infobuyNowTxt{
+				text-align: center;
+				white-space: nowrap;
+				bottom: 50px;
+				font-size: 29px;
+				position: relative;
+				color: white;
+				width: 100%;
+				padding:0;
+				/* background: aliceblue; */
+			}
+			.infoModalWrap{
+				height: 1300px;
+			}
+			.infoTitle{
+				padding-bottom:2px !important
+			}
+			.infobckbutton{
+				width: 70%;
+			}
+			.goback{
+				right: -74px;
+			}
+			.buyModal{
+				margin-top:30px !important;
+			}
+			.buyeditInfoWrap{
+				top: 414px;
+				flex-direction: row;
+
+			}
+
+			.infoWallet{
+				/* background-color: black; */
+				height: 100%;
+				padding-bottom: 100px;
+			}
+			.walletBckMobile{
+				width: 100vw;
+			}
+			.walletBackButton{
+				width: 140px;
+			}
+			.wallettxt{
+				margin: 32px 50px;
+				top: 0;
+				left: 0;
+			}
+			.walletButton{
+				/* height:20px */
+				margin-top:5px;
+				padding-top: 10px;
+			}
+			.walletButton img{
+				height:50px
+			}
+			.walletButtTxt{
+				top: 6px;
+				left: 3px;
+			}
+			.walletConnBoard{
+				width: 100%;
+			}
+			.backWallet{
+				top: -33px;
+				right: 14px;
+			}
+			.incrementWrap{
+				top: 0;
+				right: 0;
+				/* width: 410px; */
+				padding: 0;
+				width: 100%;
+				font-size: 23px;
+				position: absolute;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				top: 352px;
+				color: #E5E3E0;
+			}
+			.incrementTxt{
+				padding:0;
+				width:100%;
+				width: 593px;
+				font-size: 23px;
+				padding-left: 327px;
+				padding-right: 164px;
+			}
+			.incrementCount{
+				font-size:15px;
+				bottom:31px;
+				width: 593px;
+				font-size: 18px;
+				padding-left: 327px;
+				padding-right: 164px;
+			}
+			.selltxt{
+				width: 120px;
+				font-size:24px
+			}
+			.twitterOS img {
+			  height: 40px;
+			}
+			.twitterOS .selltxt{
+				width:121px
+			}
+			.shillopensea{
+				width:100%;
+				top:-148px;
+				padding: 0 50px;
+			}
+			.shillopensea img{
+				height:40px
+			}
+			.shillOstxt{
+				position:relative;
+				width:100%;
+				top:35px
+			}
+			.complimentToad img:first-child{
+				display:none
+			}
+			/* error message */
+			.errorImg{
+				width: 300px
+			}
+			.errorMessage{
+				overflow: hidden;
+				height: 63px;
+				top: -112px;
+				left: -52px;
+			}
+			.errorMessageWrap{
+				width:300px;
+				padding: 10px 0 0 10px;
+			}
+			.errorTitle, .errorText{
+				font-size: 16px;
+			}
+			.errorBack{
+				top: 14px;
+			}
+			.buyeditInfoWrap .editInfo {
+    		padding: 0 0px;
+			}
+			.boughteditInfoWrap .editInfo {
+			  margin: 0px 70px;
+			}
+			.sell{
+				padding-right:30px;
+			}
+		}
+		@media all and (max-width: 320px) and (min-height: 568px){
+
+			.buyModal {
+		    margin-top: 20px !important;
+			}
+			.sockboard img {
+		    width: 310px;
+			}
+			.sellredeem {
+    		padding: 0 23px;
+			}
+			.tickerTxt, .countDownTxt {
+    		font-size: 18px !important;
+			}
+			.currentPrice{
+				right:12%;
+			}
+			.sockCountDown{
+				right:12%;
+				top: 51%;
+			}
+			.editInfo {
+			  font-size: 10px;
+				width:210px
+			}
+			.buysockz{
+				bottom: 22px;
+			}
+			.buyingsockz{
+				bottom: 99px;
+			}
+			.buyingsockz img {
+			  width: 250px;
+			}
+			.buyNowTxt{
+				bottom: 11px;
+			}
+			.sellredeem, .sellredeemDisabled{
+				bottom: 20px
+			}
+			.buyeditInfoWrap {
+				top: 314px;
+			}
+			.incrementWrap{
+				top:262px
+			}
+			.incrementTxt{
+				padding-right: 194px;
+			}
+			.incrementCount{
+				font-size: 14px;
+				padding-right: 194px;
+				padding-left: 320px;
+			}
+
+			.infobck{
+				height: 690px;
+			}
+			.bannerButtons{
+				width:150px
+			}
+
+			.bannerButtons div {
+    		padding-left: 0px;
+			}
+			.bannerButtons{
+				right: 19px;
+			}
+			.connectTxt, .connectedTxt{
+				right:45px;
+				font-size:25px;
+				width: 94px;
+			}
+			.infotransition {
+		    margin-top: 80px !important;
+			}
+			.buyingsockz .buyNowTxt{
+				bottom:7px
+			}
+			.buysockz img:nth-child(1) {
+    		max-width: 100%;
+			}
+			.buyNowTxt{
+				font-size: 25px;
+			}
+			.editInfoWrap{
+				bottom: 123px;
+			}
+			.priceTxt{
+				font-size:20px !important;
+			}
+			.currentPriceTxt{
+				font-size: 12px !important;
+			}
+			.buycurrentPrice .dH2{
+				font-size:12px !important;
+			}
+			.buycurrentPrice {
+		    top: 43px;
+		    right: 60px;
+			}
+			.boughteditInfoWrap {
+    		top: 316px;
+			}
+			.shillopensea{
+				top: -108px;
+			}
+			.shillopensea img {
+		    height: 30px;
+			}
+			.shillOstxt{
+				font-size: 20px;
+				top: 25px;
+			}
+			.buyModal {
+		    margin-top: 40px !important;
+			}
 		}
