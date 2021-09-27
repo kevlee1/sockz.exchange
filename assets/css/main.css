@@ -1495,6 +1495,15 @@ body{
     			transform: translate(-50%, -50%);
 				display:none
 			}
+
+			#errorMessage1{
+				position: absolute;
+    			top: 50%;
+    			left: 50%;
+    			margin-right: -50%;
+    			transform: translate(-50%, -50%);
+			}
+
 		@media only screen and (max-width: 1800px) {
 
 			.xxlMidBoard{
@@ -1533,14 +1542,14 @@ body{
 			}
 			@media all and (max-width: 420px) and (min-height: 320px){
 
-				.desktopError{
+				/* .desktopError{
 					display:block;
 					position: fixed;
 					width:100%;
 					height:100%;
 					background-color:#071425ad;;
 					z-index: 100
-				}
+				} */
 				.errorMessage{
 					display:block;
 					width: 420px;
@@ -2046,13 +2055,7 @@ body{
 				top: -112px;
 				left: -52px;
 			}
-			#errorMessage1{
-				position: absolute;
-    			top: 50%;
-    			left: 50%;
-    			margin-right: -50%;
-    			transform: translate(-50%, -50%);
-			}
+
 			.errorMessageWrap{
 				width:300px;
 				padding: 10px 0 0 10px;
