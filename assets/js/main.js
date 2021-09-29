@@ -55,6 +55,28 @@ ismobile();
 
   fetchSupply();
 
+  async function checkMinted() {
+    if (typeof window.ethereum !== 'undefined'){
+      const provider1 = new ethers.providers.Web3Provider(window.ethereum);
+      const contract = new ethers.Contract(contractAddress, Sockz, provider1);
+      var toadId = prompt("Please enter the ID of the toad you would like to check: ", "toadID");
+      var toadInt = Number(toadId);
+      try{
+        const data = await contract.ownerOf(toadInt);
+        document.getElementById("mintTitle").innerText = "Mint Check:";
+        document.getElementById("mintError").innerText = "Unfortunately, This Toad Has Already Been Used to Mint";
+        showError();
+      }
+      catch{
+        document.getElementById("mintTitle").innerText = "Mint Check:";
+        document.getElementById("mintError").innerText = "This Toad Can Still Mint";
+        showError();
+      }
+    }
+  }
+
+  document.getElementsByClassName("checkToad")[0].addEventListener('click', checkMinted);
+
   async function requestMetaMask() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
   }

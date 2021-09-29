@@ -1274,6 +1274,11 @@ body{
 					.sell, .redeeming{
 						cursor:pointer;
 					}
+
+					.sell, .checkToad{
+						cursor:pointer;
+					}
+
 					.sell {
 						padding-right:10px;
 					}
