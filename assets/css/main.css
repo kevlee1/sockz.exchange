@@ -1542,14 +1542,14 @@ body{
 			}
 			@media all and (max-width: 420px) and (min-height: 320px){
 
-				/* .desktopError{
+				.desktopError{
 					display:block;
 					position: fixed;
 					width:100%;
 					height:100%;
 					background-color:#071425ad;;
 					z-index: 100
-				} */
+				}
 				.errorMessage{
 					display:block;
 					width: 420px;
