@@ -63,10 +63,14 @@ ismobile();
       var toadInt = Number(toadId);
       try{
         const data = await contract.ownerOf(toadInt);
-        prompt("Unfortunately, that toad has already minted a sockz");
+        document.getElementById("mintTitle").innerText = "Mint Check:";
+        document.getElementById("mintError").innerText = "Unfortunately, This Toad Has Already Been Used to Mint";
+        showError();
       }
       catch{
-        prompt("That toad has not minted a sock yet");
+        document.getElementById("mintTitle").innerText = "Mint Check:";
+        document.getElementById("mintError").innerText = "This Toad Can Still Mint";
+        showError();
       }
     }
   }
