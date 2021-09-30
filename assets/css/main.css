@@ -1665,14 +1665,14 @@ body{
 				.checkToad{
 					display:none
 				}
-				.desktopError{
+				/* .desktopError{
 					display:block;
 					position: fixed;
 					width:100%;
 					height:100%;
 					background-color:#071425ad;;
 					z-index: 100
-				}
+				} */
 
 				.walletButtTxtSoon{
 					top: 9px;
