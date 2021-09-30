@@ -11,16 +11,10 @@ function ismobile() {
 
   if (isMobile) {
       console.log("is mobile");
-      //showError();
   }
 }
 
 ismobile();
-
-// IF is mobile
-// make imgs
-// max-height: 100%;
-// max-width: 100%;
 
   // Connect wallet
 
@@ -55,27 +49,78 @@ ismobile();
 
   fetchSupply();
 
-  async function checkMinted() {
+  // async function checkMinted() {
+  //   if (typeof window.ethereum !== 'undefined'){
+  //     const provider1 = new ethers.providers.Web3Provider(window.ethereum);
+  //     const contract = new ethers.Contract(contractAddress, Sockz, provider1);
+  //     var toadId = prompt("Please enter the ID of the toad you would like to check: ", "toadID");
+  //     var toadInt = Number(toadId);
+  //     try{
+  //       const data = await contract.ownerOf(toadInt);
+  //       document.getElementById("mintTitle").innerText = "Mint Check:";
+  //       document.getElementById("mintError").innerText = "Unfortunately, This Toad Has Already Been Used to Mint";
+  //       showError();
+  //     }
+  //     catch{
+  //       document.getElementById("mintTitle").innerText = "Mint Check:";
+  //       document.getElementById("mintError").innerText = "This Toad Can Still Mint";
+  //       showError();
+  //     }
+  //   }
+  // }
+
+  // Checking toads
+
+  var toadcheckwrap = document.getElementsByClassName('checkToadWrap')[0];
+  var checkButton = document.getElementsByClassName('checkButton')[0];
+  var checkNow = document.getElementsByClassName('checkToadNow')[0];
+  var checkResults = document.getElementsByClassName('CheckToadResult')[0];
+  var mytoadID = document.getElementById('toadID');
+  document.getElementsByClassName("checkToad")[0].addEventListener('click', openCheck);
+
+  function openCheck(){
+
+    toadcheckwrap.style.display = "block";
+    checkNow.style.display = "flex";
+    checkResults.style.display = "none";
+
+    document.getElementsByClassName("checkButton")[0].addEventListener('click', checkMinted);
+  }
+
+
+  async function checkMinted(){
+
+    checkNow.style.display = "none";
+    checkResults.style.display = "flex";
+    var toadId = mytoadID.value;
+
     if (typeof window.ethereum !== 'undefined'){
       const provider1 = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(contractAddress, Sockz, provider1);
-      var toadId = prompt("Please enter the ID of the toad you would like to check: ", "toadID");
       var toadInt = Number(toadId);
       try{
         const data = await contract.ownerOf(toadInt);
-        document.getElementById("mintTitle").innerText = "Mint Check:";
-        document.getElementById("mintError").innerText = "Unfortunately, This Toad Has Already Been Used to Mint";
-        showError();
+        document.getElementById("checkResult").innerText = "Your toad is already wearing sockz.";
       }
       catch{
-        document.getElementById("mintTitle").innerText = "Mint Check:";
-        document.getElementById("mintError").innerText = "This Toad Can Still Mint";
-        showError();
+        document.getElementById("checkResult").innerText = "Your toad has no sockz and cold feet";
+
       }
     }
   }
 
-  document.getElementsByClassName("checkToad")[0].addEventListener('click', checkMinted);
+  document.getElementsByClassName("checkLeave")[0].addEventListener('click', closeCheck);
+
+  function closeCheck(){
+    toadcheckwrap.style.display = "none";
+    document.getElementsByClassName("checkButton")[0].removeEventListener('click', checkMinted);
+    checkNow.style.display = "block";
+    checkResults.style.display = "none";
+    mytoadID.value = "";
+
+  }
+
+
 
   async function requestMetaMask() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -247,6 +292,8 @@ ismobile();
 
      walletModalWrap.style.display = "none";
 
+   } else if (event.target.className == "checkToadWrap"){
+     closeCheck();
    }
 
   }

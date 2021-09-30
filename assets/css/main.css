@@ -344,7 +344,7 @@ body{
 						width: 162px;
 						text-align: center;
 						white-space: nowrap;
-						right: 67px;
+    				right: 69px;
 						top: 9px;
 					}
 
@@ -406,18 +406,18 @@ body{
 
 					.redeemTxt{
 						position: absolute;
-						display:block;
-						bottom: 23px;
-						font-family: 'Wizards';
-						font-size: 28px;
-						color: white;
-						width: 230px;
-						text-align: center;
-						white-space: nowrap;
-						right:  249px;
-						/* background-color: antiquewhite; */
-						top: 9px;
-						display:flex;
+				    display: block;
+				    font-family: 'Wizards';
+				    font-size: 28px;
+				    color: white;
+				    width: 217px;
+				    text-align: center;
+				    white-space: nowrap;
+				    right: 263px;
+				    /* background-color: antiquewhite; */
+				    top: 12px;
+				    display: flex;
+				    justify-content: center;
 					}
 					.redeemTxtHover{
 						position: absolute;
@@ -431,7 +431,7 @@ body{
 						white-space: nowrap;
 						right: 256px;
 						/* background-color: antiquewhite; */
-						top: 9px;
+						top: 12px;
 					}
 					.redeem:hover .redeemTxt{
 						display:none;
@@ -1282,6 +1282,122 @@ body{
 					.sell {
 						padding-right:10px;
 					}
+					.checkToad .selltxt2{
+						font-size: 28px;
+					}
+					.checkToadWrap{
+						position: fixed;
+						width:100%;
+						height:100%;
+						background-color:rgb(7, 20, 37,0.9);
+						display:none;
+						z-index: 40
+					}
+					.checkToadBoard{
+						width:405px;
+						height:129px;
+						position: fixed;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						z-index: 50;
+					}
+
+					.checkLeave{
+						position: absolute;
+				    top: 14px;
+				    right: 8px;
+				    cursor: pointer;
+				    z-index: 40;
+					}
+
+					.checkToadTxt{
+						color:white;
+						font-family: 'Comic Neue';
+				    font-size: 20px;
+				    text-align: center;
+					}
+						.checkToadNow{
+							position: absolute;
+							top:0;
+							left:0;
+							height: 129px;
+							width:100%;
+					    display: flex;
+					    flex-direction: column;
+					    justify-content: center;
+							padding-left: 18px;
+						}
+
+							.checkForm input{
+								border:0;
+								outline: none;
+								background: none;
+								color: white;
+								height: 31px;
+								width: 127px;
+								margin-right: 10px;
+								margin-top: 10px;
+								padding: 3px 0 5px 10px;
+								color:whitesmoke;
+								font-family: 'Comic Neue';
+								font-size: 20px;
+							}
+							.checkForm input::placeholder{
+								color:whitesmoke;
+							}
+							input::-webkit-input-placeholder {
+							    border-bottom: 2px solid white;
+							}
+							/* .checkForm button{
+								padding: 4px 7px;
+						    font-family: 'Wizards';
+						    font-size: 24px;
+			      		cursor:pointer;
+							} */
+							.checkInput{
+								display:flex;
+								justify-content: center;
+							}
+							.checkbtntxt{
+								position:absolute;
+								top: 15px;
+						    left: 23px;
+								font-family: 'Wizards';
+								font-size: 20px;
+								cursor:pointer;
+							}
+							.checkbtntxt:hover{
+								color:whitesmoke
+							}
+							.checkBckButton{
+								height: 36px;
+						    width: 110px;
+							}
+							.checkButton{
+								position: relative;
+    						width: 111px;
+    						padding-top: 10px;
+								}
+
+						.CheckToadResult{
+							position: absolute;
+							top:0;
+							left:0;
+							height: 129px;
+							width:100%;
+					    display: none;
+					    flex-direction: column;
+					    justify-content: center;
+							padding-left: 18px;
+						}
+
+					.checkToad{
+						padding-top:2px;
+					}
+					.checkToad .selltxt2{
+						padding-left:0
+					}
 
 					#sellowns{
 						display:block
@@ -1547,6 +1663,9 @@ body{
 			}
 			@media all and (max-width: 420px) and (min-height: 320px){
 
+				.checkToad{
+					display:none
+				}
 				.desktopError{
 					display:block;
 					position: fixed;
