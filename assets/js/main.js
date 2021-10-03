@@ -87,7 +87,6 @@ ismobile();
     document.getElementsByClassName("checkButton")[0].addEventListener('click', checkMinted);
   }
 
-
   async function checkMinted(){
 
     checkNow.style.display = "none";
@@ -153,7 +152,7 @@ ismobile();
   }
 
   document.getElementById("metaMask").addEventListener('click', connectMetaMask);
-  document.getElementById("browserWallet").addEventListener('click', connectMetaMask);
+  // document.getElementById("browserWallet").addEventListener('click', connectMetaMask);
 
   async function connectWalletConnect(){
     const webProvider = new WalletConnectProvider({
@@ -360,6 +359,7 @@ ismobile();
   }
 
   document.getElementsByClassName("minus")[0].addEventListener('click', minusone);
+
 
   async function buyingSockz(){
 
