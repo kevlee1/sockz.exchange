@@ -16,7 +16,9 @@
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.4.7",
+    "graphql": "^15.6.0",
     "hardhat": "^2.6.4",
+    "tailwindcss": "^2.2.16",
     "web3": "^1.5.3"
   }
 }

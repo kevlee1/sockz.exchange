@@ -5,6 +5,8 @@ const Sockz = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"}
 const contractAddress = "0x537B9AF55daDcaD9D22309e5b8CE35CFFD8c1925"
 var errorMessageWrap = document.getElementById('errorMessage1');
 const WalletConnectProvider = window.WalletConnectProvider.default;
+var submitBtn;
+var selectedToadz = [];
 // Is mobile?
 function ismobile() {
   let isMobile = window.matchMedia("only screen and (max-width: 740px)").matches;
@@ -361,13 +363,14 @@ ismobile();
 
   document.getElementsByClassName("minus")[0].addEventListener('click', minusone);
 
-  async function buyingSockz(){
+  async function buyingSockz(listOfToadz){
 
     if (isConnected) {
-      if (incrementValue.innerText > 1) {
+      if (listOfToadz.length > 1) {
         try {
-          var lot = prompt("Please enter the list of toadIds you would like to mint from: ", "1,2,3,...");
-          var toadIds = lot.split(',').map(Number);
+          //var lot = prompt("Please enter the list of toadIds you would like to mint from: ", "1,2,3,...");
+          //var toadIds = lot.split(',').map(Number);
+          var toadIds = listOfToadz.split(',').map(Number);
           console.log(toadIds);
           const contract = new ethers.Contract(contractAddress, Sockz, signer);
           const transaction = await contract.multiMintWithToad(toadIds);
@@ -379,10 +382,11 @@ ismobile();
           return;
         }
       }
-      else if (incrementValue.innerText == 1) {
+      else if (listOfToadz.length == 1) {
         try {
-          var toadId = prompt("Please enter the ID of the toad you would like to mint from: ", "toadID");
-          var toadInt = Number(toadId);
+          //var toadId = prompt("Please enter the ID of the toad you would like to mint from: ", "toadID");
+          //var toadInt = Number(toadId);
+          var toadInt = Number(listOfToadz[0]);
           console.log(toadInt);
           const contract = new ethers.Contract(contractAddress, Sockz, signer);
           const transaction = await contract.mintWithToad(toadInt);
@@ -395,7 +399,7 @@ ismobile();
         }
       }
       else {
-        window.alert("please choose how many sockz you would like to mint");
+        window.alert("please select a toad to mint");
       }
     }
     else {
@@ -419,7 +423,7 @@ ismobile();
 
   }
 
-  document.getElementsByClassName("buyingsockz")[0].addEventListener('click', buyingSockz);
+  //document.getElementsByClassName("buyingsockz")[0].addEventListener('click', buyingSockz);
 
   // info modal
   var infotransition = document.getElementsByClassName('infotransition')[0];
@@ -438,3 +442,70 @@ ismobile();
   }
   console.log( document.getElementsByClassName("questions")[0]);
   document.getElementsByClassName("questions")[0].addEventListener('click', moreinfo);
+
+  var dictToadz;
+  const subgraph = "https://api.thegraph.com/subgraphs/name/kevlee1/cryptoadz";
+  const openseaJpg = "https://api.opensea.io/api/v1/assets?collection=cryptoadz-by-gremplin&token_ids=";
+
+  // get list of available toadz to mint
+  async function postData(url = '', data = {}){
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      return await response.json();
+  }
+
+  async function getData(url = ''){
+    const response = await fetch(url);
+    return await response.json();
+  }
+
+  // display toadz
+  async function showToadz(){
+    if(isConnected){
+      var displayToadzWrap = document.getElementById('displayToadzWrap');
+      dictToadz = await postData(subgraph, {"query":"{\n  toadzs(where: {owner: \"" + address + "\" }) {\n    id\n  }\n}\n", "variables": null})
+        .then(data => {return data["data"]["toadzs"];});
+      for (var i = 0; i < dictToadz.length; i++){
+        const toadURL = openseaJpg + dictToadz[i]["id"];
+        var jpg = await getData(toadURL)
+          .then(data => {return data["assets"][0]["image_url"];});
+        const toadHTML = `
+          <div class="toadzBox">
+            <img src=` + jpg + ` alt="" width="350" height="350" />
+            <div>
+              <input type="checkbox" name="toadID" id="` + i + `" value="` + dictToadz[i]["id"] +`">
+              <label for="` + i + `"> ` + dictToadz[i]["id"] + `</label>
+            </div>
+          </div>`
+        
+        displayToadz.innerHTML = displayToadz.innerHTML + toadHTML;
+      }
+      
+      //displayToadzWrap.innerHTML = 
+      displayToadzWrap.style.display = "block";
+      background.style.display = "none"
+    }
+    else{
+      connectToWallet();
+      return;
+    }
+  }
+  document.getElementsByClassName("buyingsockz")[0].addEventListener('click', showToadz);
+
+  function submitToadz(){
+    console.log("is it even coming here");
+    const checkboxes = document.querySelectorAll(`input[name="toadID"]:checked`);
+    let values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value);
+    });
+    console.log("is it even coming here");
+    buyingSockz(values);
+  }
+  document.getElementById('submit').addEventListener('click', (event) => {
+    submitToadz();
+  });
+  console.log(document.getElementById('submit'));
