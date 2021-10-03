@@ -370,7 +370,7 @@ ismobile();
         try {
           //var lot = prompt("Please enter the list of toadIds you would like to mint from: ", "1,2,3,...");
           //var toadIds = lot.split(',').map(Number);
-          var toadIds = listOfToadz.split(',').map(Number);
+          var toadIds = listOfToadz.map(Number);
           console.log(toadIds);
           const contract = new ethers.Contract(contractAddress, Sockz, signer);
           const transaction = await contract.multiMintWithToad(toadIds);
@@ -492,6 +492,7 @@ ismobile();
       connectToWallet();
       return;
     }
+    document.getElementById('submit').addEventListener('click', submitToadz);
   }
   document.getElementsByClassName("buyingsockz")[0].addEventListener('click', showToadz);
 
@@ -502,10 +503,7 @@ ismobile();
     checkboxes.forEach((checkbox) => {
         values.push(checkbox.value);
     });
-    console.log("is it even coming here");
+    console.log(values);
     buyingSockz(values);
   }
-  document.getElementById('submit').addEventListener('click', (event) => {
-    submitToadz();
-  });
   console.log(document.getElementById('submit'));
