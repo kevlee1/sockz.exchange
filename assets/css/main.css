@@ -1435,21 +1435,82 @@ body{
 				width:100%;
 				z-index: 40;
 				background-color:rgb(7, 20, 37,0.9);
-				  
+
 			}
 
+			#displayToadz{
+				display:grid;
+				grid-template-columns: auto auto auto;
+				max-width: 350px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top:10px;
+				align-items: stretch;
+			}
+
+			.checkBoxes input{
+				height: 19px;
+		    width: 19px;
+				margin-top: auto;
+		    margin-bottom: auto;
+				margin-right:5px;
+		    /* margin-top: 10px; */
+			}
+			.checkBoxes{
+				width:100%;
+				display:flex;
+				justify-content:center;
+		    margin-top: 1px;
+			}
+
+			.mytoad{
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				padding: 4px;
+			}
+			.toadzBox{
+				margin-top: 11px;
+				justify-content: center;
+				display: flex;
+				flex-direction: column;
+			}
+			.toadfinder{
+				display: flex;
+				flex-direction: column;
+				z-index: 30;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				/* background-color: pink; */
+				transition: margin-top .3s ease;
+				height:100%
+			}
+
+			.toadfinder .buysockz img{
+				width:450px
+			}
+			.toadfinder .buysockz{
+				bottom: 0px;
+			}
 			#displayToadz{
 				display: grid;
 				padding-top: 1.25rem;
 			}
-
-			.toadzBox{
-
+			#displayToadz label{
+				color:white;
+				font-size:24px;
+				font-family:'Comic Neue'
 			}
+			/* .toadzBox img{
+				width:110px;
+				height:110px;
+			} */
 
-			@media (min-width: 768px) { 
+			@media (min-width: 768px) {
 				#displayToadzWrap{
-					grid-template-columns: repeat(2, minmax(0, 1fr)); 
+					grid-template-columns: repeat(2, minmax(0, 1fr));
 				}
 
 				#toadzBox{
@@ -1457,7 +1518,7 @@ body{
 					width: 24rem;
 				}
 			}
-			  
+
 
 			/* info modal */
 
@@ -1693,7 +1754,26 @@ body{
 			.boardXXLR{
 				margin-top: 0px;
 			}
+
+			@media only screen and (max-width: 400px) {
+				#displayToadz{
+					grid-template-columns: auto auto;
+				}
+				.toadfinder .buysockz {
+				    height: unset
+				}
+				.displayToadzWrap .buysockz{
+					max-width: 100vw;
+				}
+				.displayToadzWrap .buyNowTxt{
+					/* bottom: 20px!important */
+				}
+			}
 			@media all and (max-width: 420px) and (min-height: 320px){
+
+				.toadfinder .buysockz {
+						height: unset
+				}
 
 				.checkToad{
 					display:none
@@ -2258,6 +2338,9 @@ body{
 		}
 		@media all and (max-width: 320px) and (min-height: 568px){
 
+			.toadfinder{
+				width: 100%;
+			}
 			.buyModal {
 		    margin-top: 20px !important;
 			}
