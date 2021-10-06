@@ -465,26 +465,29 @@ ismobile();
   // display toadz
   async function showToadz(){
     if(isConnected){
+      console.log("Connected");
       var displayToadzWrap = document.getElementById('displayToadzWrap');
+
       dictToadz = await postData(subgraph, {"query":"{\n  toadzs(where: {owner: \"" + address + "\" }) {\n    id\n  }\n}\n", "variables": null})
         .then(data => {return data["data"]["toadzs"];});
+
       for (var i = 0; i < dictToadz.length; i++){
-        const toadURL = openseaJpg + dictToadz[i]["id"];
+        const toadURL = openseaJpg + dictToadz[i]["id"];  
         var jpg = await getData(toadURL)
           .then(data => {return data["assets"][0]["image_url"];});
         const toadHTML = `
           <div class="toadzBox">
-            <img src=` + jpg + ` alt="" width="350" height="350" />
-            <div>
-              <input type="checkbox" name="toadID" id="` + i + `" value="` + dictToadz[i]["id"] +`">
-              <label for="` + i + `"> ` + dictToadz[i]["id"] + `</label>
+            <img class="mytoad" src="${jpg}" alt="" width="110" height="110" />
+            <div class="checkBoxes">
+              <input type="checkbox" name="toadID" id="${i}" value="${dictToadz[i]["id"]}">
+              <label for="${i}">${dictToadz[i]["id"]}</label>
             </div>
-          </div>`
-        
+          </div>`;
+
         displayToadz.innerHTML = displayToadz.innerHTML + toadHTML;
       }
-      
-      //displayToadzWrap.innerHTML = 
+
+      //displayToadzWrap.innerHTML =
       displayToadzWrap.style.display = "block";
       background.style.display = "none"
     }
@@ -492,7 +495,7 @@ ismobile();
       connectToWallet();
       return;
     }
-    document.getElementById('submit').addEventListener('click', submitToadz);
+    document.getElementById('submitToad').addEventListener('click', submitToadz);
   }
   document.getElementsByClassName("buyingsockz")[0].addEventListener('click', showToadz);
 
