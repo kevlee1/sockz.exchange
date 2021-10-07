@@ -7,6 +7,7 @@ var errorMessageWrap = document.getElementById('errorMessage1');
 const WalletConnectProvider = window.WalletConnectProvider.default;
 var submitBtn;
 var selectedToadz = [];
+var isChecked = false;
 // Is mobile?
 function ismobile() {
   let isMobile = window.matchMedia("only screen and (max-width: 740px)").matches;
@@ -496,17 +497,33 @@ ismobile();
       return;
     }
     document.getElementById('submitToad').addEventListener('click', submitToadz);
+    document.getElementById('allToadz').addEventListener('click', selectAllToadz);
   }
   document.getElementsByClassName("buyingsockz")[0].addEventListener('click', showToadz);
 
   function submitToadz(){
-    console.log("is it even coming here");
+
     const checkboxes = document.querySelectorAll(`input[name="toadID"]:checked`);
     let values = [];
     checkboxes.forEach((checkbox) => {
         values.push(checkbox.value);
     });
-    console.log(values);
+
     buyingSockz(values);
   }
-  console.log(document.getElementById('submit'));
+
+  function selectAllToadz(){
+    const checkboxes = document.querySelectorAll(`input[name="toadID"]`);
+    if(!isChecked){
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = true;
+      });
+      isChecked = true;
+    }
+    else {
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+      isChecked = false;
+    }
+  }
