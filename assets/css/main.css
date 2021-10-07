@@ -234,7 +234,9 @@ body{
 			right:0;
 			z-index: 1;
 		}
-
+		.bannerButtons .checkToad:hover #checkButton{
+			filter:hue-rotate(32deg);
+		}
 		.leftgoo{
 	    position: absolute;
 	    z-index: 20;
@@ -243,7 +245,7 @@ body{
 		.rightgoo{
 			position: absolute;
 			right: 80%;
-			top: 67px;
+			top: 75px;
 		}
 
 		/* Temporary measure because mid is too long */
@@ -389,8 +391,8 @@ body{
 						display: block;
 						top: 9px;
 						/* bottom: 23px; */
-						right: 71px;
-						width: 153px;
+						right: 69px;
+						width: 162px;
 						height: 33px;
 						margin-left: 12px;
 						font-family: 'Wizards';
@@ -413,7 +415,7 @@ body{
 				    width: 217px;
 				    text-align: center;
 				    white-space: nowrap;
-				    right: 263px;
+						left: 19px;
 				    /* background-color: antiquewhite; */
 				    top: 12px;
 				    display: flex;
@@ -429,7 +431,7 @@ body{
 						width: 230px;
 						text-align: center;
 						white-space: nowrap;
-						right: 256px;
+						left: 19px;
 						/* background-color: antiquewhite; */
 						top: 12px;
 					}
@@ -452,6 +454,10 @@ body{
 						padding-top: 3px;
 						margin-left: 7px;
 						cursor:pointer;
+					}
+					.questions:hover img{
+						transition: all .2s ease;
+						transform:rotate(10deg);
 					}
 
 				/* background elements */
@@ -633,9 +639,9 @@ body{
 
 				.walletButtTxtSoon{
 					position: relative;
-					top: 16px;
+					top: 10px;
 					left: 13px;
-					font-size: 18px;
+					font-size: 28px;
 					/* background-color: blue; */
 					text-align: center;
 					height: 10px;
@@ -1253,7 +1259,7 @@ body{
 
 					.selltxt{
 						position:absolute;
-						top:8px;
+						top: 7px;
 						width:100%;
 						font-family: 'Wizards';
 						font-size:32px;
@@ -1273,6 +1279,9 @@ body{
 					.sell, .redeeming{
 						cursor:pointer;
 					}
+					.redeeming .selltxt{
+						/* padding-top:4px */
+					}
 
 					.sell, .checkToad{
 						cursor:pointer;
@@ -1283,6 +1292,15 @@ body{
 					}
 					.checkToad .selltxt2{
 						font-size: 28px;
+						z-index: 100
+					}
+					.checkToad .selltxt{
+						font-size: 28px !important;
+						z-index: 100;
+						padding-left: 16px;
+					}
+					.checkToad .selltxt:hover{
+						opacity:1
 					}
 					.checkToadWrap{
 						position: fixed;
@@ -1398,6 +1416,26 @@ body{
 						padding-left:0
 					}
 
+
+							.checkToad img:nth-child(1){
+								display:block;
+
+							}
+
+							.checkToad img:nth-child(2){
+								display:none;
+								position: relative;
+								margin-left: 1px;
+
+							}
+
+							.checkToad:hover img:nth-child(1){
+								display:none
+							}
+
+							.checkToad:hover img:nth-child(2){
+								display:block;
+							}
 					#sellowns{
 						display:block
 					}
@@ -1410,6 +1448,9 @@ body{
 					}
 					.sell:hover #sellownshover{
 						display:block;
+					}
+					.sellredeem .redeeming .selltxt{
+						padding-top:4px
 					}
 
 					#redeemowns{
@@ -1617,7 +1658,7 @@ body{
 			}
 
 			#errorMessage1{
-				position: absolute;
+				position: fixed;
     			top: 50%;
     			left: 50%;
     			margin-right: -50%;
@@ -1660,20 +1701,32 @@ body{
 			.boardXXLR{
 				margin-top: 0px;
 			}
-			@media all and (max-width: 420px) and (min-height: 320px){
+			@media all and (max-width: 429px) and (min-height: 320px){
+
+				.sellredeem .redeeming .selltxt{
+					font-size: 19px !important;
+				}
+
+				.infobck{
+					height: 690px;
+					width: 100%;
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+				.infoText{
+					display:block
+				}
 
 				.checkToad{
 					display:none
 				}
-				/* .desktopError{
-					display:block;
-					position: fixed;
-					width:100%;
-					height:100%;
-					background-color:#071425ad;;
-					z-index: 100
-				} */
-
+				.ditherTop img{
+					width:unset;
+				}
+				.infobck{
+					height: 693px;
+				}
 				.walletButtTxtSoon{
 					top: 9px;
 					left: -1px;
@@ -1920,7 +1973,11 @@ body{
 				height:40px
 			}
 			.buynowMobile{
-				height:70%
+				height:70%;
+				left: 0;
+				right: 0;
+				margin-left: auto;
+				margin-right: auto;
 			}
 			.editInfoWrap{
 				bottom: 125px;
@@ -1990,7 +2047,7 @@ body{
 				font-size: 20px;
 			}
 			.rightgoo{
-				top:41px
+				top:41px;
 			}
 			/* .connectedbck img:nth-child(2) {
 			    width: 175px;
@@ -2002,9 +2059,10 @@ body{
 			/* infomodal */
 
 			.infomodal{
-				width:90%;
+		    /* width: 360px; */
 				transform:translate(-50%, 0);
 				margin-top:0;
+				position:relative
 			}
 			.infomodal img{
 
@@ -2017,20 +2075,28 @@ body{
 				padding:0;
 			}
 			.infoBody{
-				font-size:15px;
-				width: calc(100vw - 100px);
+		    font-size: 13px;
+				width: 260px;
+			}
+			.buysockzinfo{
+				height: 78px;
 			}
 			.infoText{
-				top: 0;
+				top: 36px;
+				left: 72px;
+				height: 532px;
+				width:300px;
+				margin-left: auto;
+				margin-right: auto;
 				left: 0;
-				margin: 10% 30% 0 10%;
-				height: 70%
+				right: 0;
+				padding-left:20px;
 			}
 			.line img{
-				width: calc(100vw - 100px);
+				width: 100%;
 			}
 			.infoButtons{
-				bottom: 0;
+				bottom: 134px;
 				left: 0;
 				width:100%;
 				/* background-color:pink */
@@ -2063,12 +2129,17 @@ body{
 				margin:0;
 			}
 			.twitterOS{
-				bottom: -50px;
+    		bottom: -44px;
+				width: 300px;
+				margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
 			}
 			.infobuyNowTxt{
 				text-align: center;
 				white-space: nowrap;
-				bottom: 50px;
+				bottom: 45px;
 				font-size: 29px;
 				position: relative;
 				color: white;
@@ -2086,7 +2157,9 @@ body{
 				width: 70%;
 			}
 			.goback{
-				right: -74px;
+				right: -54px;
+				top:-20px;
+				transform:rotate(-5deg)
 			}
 			.buyModal{
 				margin-top:30px !important;
@@ -2208,10 +2281,10 @@ body{
 				display: none;
 			}
 			.errorTitle, .errorText{
-				font-size: 16px;
+				font-size: 13px;
 			}
 			.errorBack{
-				top: 14px;
+				top: -60px;
 			}
 			.buyeditInfoWrap .editInfo {
     		padding: 0 0px;
@@ -2220,7 +2293,7 @@ body{
 			  margin: 0px 70px;
 			}
 			.sell{
-				padding-right:30px;
+				padding-right:0px;
 			}
 		}
 		@media all and (max-width: 320px) and (min-height: 568px){
@@ -2280,6 +2353,7 @@ body{
 
 			.infobck{
 				height: 690px;
+				width: 365px;
 			}
 			.bannerButtons{
 				width:150px
@@ -2297,7 +2371,7 @@ body{
 				width: 94px;
 			}
 			.infotransition {
-		    margin-top: 80px !important;
+		    margin-top: 20px !important;
 			}
 			.buyingsockz .buyNowTxt{
 				bottom:7px
