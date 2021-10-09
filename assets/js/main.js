@@ -366,6 +366,9 @@ ismobile();
 
   async function buyingSockz(listOfToadz){
 
+    displayToadzWrap.style.display = "none";
+    displayToadz.innerHTML = "";
+    
     if (isConnected) {
       if (listOfToadz.length > 1) {
         try {
@@ -421,7 +424,6 @@ ismobile();
     boughteditInfoWrap.style.display = "flex";
 
     boughtBackground.style.display = "block";
-
   }
 
   //document.getElementsByClassName("buyingsockz")[0].addEventListener('click', buyingSockz);
@@ -463,17 +465,18 @@ ismobile();
     return await response.json();
   }
 
+  var displayToadzWrap = document.getElementById('displayToadzWrap');
+
   // display toadz
   async function showToadz(){
     if(isConnected){
       console.log("Connected");
-      var displayToadzWrap = document.getElementById('displayToadzWrap');
 
       dictToadz = await postData(subgraph, {"query":"{\n  toadzs(where: {owner: \"" + address + "\" }) {\n    id\n  }\n}\n", "variables": null})
         .then(data => {return data["data"]["toadzs"];});
 
       for (var i = 0; i < dictToadz.length; i++){
-        const toadURL = openseaJpg + dictToadz[i]["id"];  
+        const toadURL = openseaJpg + dictToadz[i]["id"];
         var jpg = await getData(toadURL)
           .then(data => {return data["assets"][0]["image_url"];});
         const toadHTML = `
@@ -509,7 +512,12 @@ ismobile();
         values.push(checkbox.value);
     });
 
-    buyingSockz(values);
+    if (values < 1){
+      window.alert("Please select a toad to mint");
+    } else {
+      buyingSockz(values);
+    }
+
   }
 
   function selectAllToadz(){
