@@ -1539,6 +1539,12 @@ body{
 			.redeembtntxt:hover{
 				color:whitesmoke
 			}
+			.redeemButton{
+				position: relative;
+				width: 111px;
+				padding-top: 10px;
+				}
+
 			/* info modal */
 
 			.infoModalWrap{
