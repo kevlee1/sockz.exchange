@@ -438,3 +438,15 @@ ismobile();
   }
   console.log( document.getElementsByClassName("questions")[0]);
   document.getElementsByClassName("questions")[0].addEventListener('click', moreinfo);
+
+  document.getElementsByClassName("redeemButton")[0].addEventListener('click', redeem);
+
+  function redeem(){
+
+    const scriptURL = 'ADDRESS OF THE DEPLOYED GOOGLE SHEET';
+    const form = document.forms['redeemThis'];
+  
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  }
