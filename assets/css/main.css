@@ -582,13 +582,6 @@ body{
 					left: 85px;
 					color:white;
 					word-wrap: break-word;
-					/* background-color: pink; */
-
-					/* height: 100%;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between; */
-
 				}
 
 				.infowallet{
@@ -1466,7 +1459,86 @@ body{
 					.redeeming:hover #redeemownshover{
 						display:block;
 					}
+			/* redeem modal */
 
+			.redeemModalWrap{
+				position: fixed;
+				display: block;
+				height:100%;
+				width:100%;
+				background-color:rgb(7, 20, 37,0.9);
+				z-index: 35
+			}
+
+			.redeemBckMobile{
+				min-width: 378px
+			}
+			.redeemtxtwrappera{
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				height: 290px;
+				justify-content: space-between;
+				top: 63px;
+				left: 85px;
+				color:white;
+				word-wrap: break-word;
+		    width: 439px;
+			}
+			.redeemInput{
+				/* display:flex;
+				justify-content: center; */
+			}
+
+			.redeemTxtWrap{
+				position: relative;
+				top:0;
+				left:0;
+				height: 129px;
+				width:100%;
+				display: flex;
+				flex-direction: column;
+				/* justify-content: center; */
+			}
+			.redeemForm input{
+				border:0;
+				border-bottom:2px solid white;
+				outline: none;
+				background: none;
+				color: white;
+				height: 31px;
+				width: 100%;
+				margin-right: 10px;
+				margin-top: 20px;
+				padding: 0;
+				color:whitesmoke;
+				font-family: 'Comic Neue';
+				font-size: 20px;
+			}
+			.redeemForm input::placeholder{
+				color:whitesmoke;
+			}
+
+			.backRedeem{
+				position: absolute;
+				top: -20px;
+				right: -16px;
+				cursor:pointer;
+			}
+			.backRedeem:hover{
+				transform:rotate(8deg)
+			}
+			.redeembtntxt{
+				position:absolute;
+				top: 15px;
+				left: 23px;
+				font-family: 'Wizards';
+				font-size: 20px;
+				cursor:pointer;
+			}
+			.redeembtntxt:hover{
+				color:whitesmoke
+			}
 			/* info modal */
 
 			.infoModalWrap{
@@ -1669,6 +1741,12 @@ body{
 
 			.xxlMidBoard{
 				width:25%;
+			}
+			.redeemBckMobile{
+				width: 100% !important;
+			}
+			.redeemtxtwrappera{
+				width:63%
 			}
 		}
 
@@ -2177,6 +2255,9 @@ body{
 			}
 			.walletBckMobile{
 				width: 100vw;
+			}
+			.walletBackButton{
+				width: 140px;
 			}
 			.walletBackButton{
 				width: 140px;
