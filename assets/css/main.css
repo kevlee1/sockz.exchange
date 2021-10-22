@@ -1463,7 +1463,7 @@ body{
 
 			.redeemModalWrap{
 				position: fixed;
-				display: block;
+				display: none;
 				height:100%;
 				width:100%;
 				background-color:rgb(7, 20, 37,0.9);

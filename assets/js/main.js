@@ -1,5 +1,8 @@
 //import { ethers } from 'ethers';
 //import Sockz from '../../src/util/sockzAbi.json' assert { type: "json" };
+
+const { ethers } = require("ethers");
+
 // Update with actual contract address
 const Sockz = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"who","type":"address"},{"indexed":false,"internalType":"uint256","name":"sockId","type":"uint256"}],"name":"Claim","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"baseURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"sockId","type":"uint256"}],"name":"claim","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"claimIsActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"deposit","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"flipClaimState","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"flipMintState","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"mintIsActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"toadId","type":"uint256"}],"name":"mintWithToad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"sockIds","type":"uint256[]"}],"name":"multiClaimWithSockz","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"toadIds","type":"uint256[]"}],"name":"multiMintWithToad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"baseURI","type":"string"}],"name":"setBaseURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"toadAddress","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenOfOwnerByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}]
 const contractAddress = "0x537B9AF55daDcaD9D22309e5b8CE35CFFD8c1925"
@@ -104,6 +107,38 @@ ismobile();
       catch{
         document.getElementById("checkResult").innerText = "Your toad has no sockz and cold feet";
 
+      }
+    }
+  }
+
+  async function checkSockz(){
+    if (typeof window.ethereum !== 'undefined'){
+      const provider1 = new ethers.providers.Web3Provider(window.ethereum);
+      const contract = new ethers.Contract(contractAddress, Sockz, provider1);
+      try{
+        const data = await contract.balanceOf(address);
+        return data;
+      }
+      catch{
+        return 0;
+      }
+    }
+  }
+
+  async function getSockz(balance){
+    if (typeof window.ethereum !== 'undefined'){
+      const provider1 = new ethers.providers.Web3Provider(window.ethereum);
+      const contract = new ethers.Contract(contractAddress, Sockz, provider1);
+      try{
+        var los = [];
+        for(let i = 0; i < balance; i++){
+          const data = await contract.tokenOfOwnerByIndex(address, i);
+          los.push(data);
+        }
+        return los;
+      }
+      catch{
+        return [];
       }
     }
   }
@@ -218,6 +253,7 @@ ismobile();
   var buybubbles = document.getElementsByClassName('buybubbles')[0];
 
   var infoModalWrap = document.getElementsByClassName('infoModalWrap')[0];
+  var redeemModalWrap = document.getElementsByClassName('redeemModalWrap')[0];
 
   function showBuyModal(){
 
@@ -293,6 +329,8 @@ ismobile();
 
    } else if (event.target.className == "checkToadWrap"){
      closeCheck();
+   } else if (event.target.className == "reddemModalWrap" || event.target.className == "walletBackButton") {
+     redeemModalWrap.style.display = "none";
    }
 
   }
@@ -439,14 +477,39 @@ ismobile();
   console.log( document.getElementsByClassName("questions")[0]);
   document.getElementsByClassName("questions")[0].addEventListener('click', moreinfo);
 
-  document.getElementsByClassName("redeemButton")[0].addEventListener('click', redeem);
+  function showRedeem() {
+    var redeemModalWrap = document.getElementsByClassName('redeemModalWrap')[0];
+    redeemModalWrap.style.display = "block";
+  }
+
+  document.getElementsByClassName("redeeming")[0].addEventListener('click', showRedeem);
+  document.getElementsByClassName("redeeming")[1].addEventListener('click', showRedeem);
 
   function redeem(){
 
-    const scriptURL = 'ADDRESS OF THE DEPLOYED GOOGLE SHEET';
+/*     var balance = await checkSockz();
+    var los = await getSockz(balance);
+    if (balance > 0) {
+      var sockzNum = prompt("You have " + balance + " Sockz to redeem. Please select how many you would like to redeem: ", "num");
+      if (sockzNum <= 0 || sockzNum > balance) {
+        window.alert("you don't have enough sockz to redeem");
+      } else {
+        var redeemSockz = los.slice(0, sockzNum);
+        const contract = new ethers.Contract(contractAddress, Sockz, signer);
+        const transaction = await contract.multiClaimWithSockz(redeemSockz);
+        await transaction.wait();
+      }
+    } else {
+      window.alert("you don't have any sockz to redeem");
+    } */
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwvqaU4inr3kNGLEEEAeubUOQfY4OCap68izdeBZQpexQujyKyX-Wc5ScDa0VB_BAVZ1w/exec';
     const form = document.forms['redeemThis'];
   
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
   }
+
+
+  document.getElementsByClassName("redeemButton")[0].addEventListener('click', redeem);
