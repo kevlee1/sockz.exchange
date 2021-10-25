@@ -671,7 +671,7 @@ You can transfer, sell, or trade the NFT anytime on a variety of platforms. To r
       <div class="redeemModalWrap">
 
         <div class="walletConnBoard" >
-          <img style="width:588px;height:395px" class="redeemBckMobile" src="assets/images/wallet/walletmodal.png">
+          <img style="max-width:480px;width:588px;height:530px" class="redeemBckMobile" src="assets/images/wallet/walletmodal.png">
 
           <div class="backRedeem" id="redeemModalB">
             <img class="walletBackButton" src="assets/images/modal/goback.png">
@@ -688,11 +688,22 @@ You can transfer, sell, or trade the NFT anytime on a variety of platforms. To r
                 <div class="redeemForm">
                   <form name="redeemThis" class="redeemInput">
                     <input type="text" id="toadID" name="name" placeholder="Enter your name or alias" required>
-                    <input type="text" id="toadID" name="address" placeholder="Enter an address" required>
+                    <div class="address1">
+                      <input type="text" id="toadID" name="address line 1" placeholder="Address line 1" style="width: 50%;" required>
+                      <input type="text" id="toadID" name="address line 2" placeholder="Address line 2" style="width: 50%;">
+                    </div>
+                    <div class="address1">
+                      <input type="text" id="toadID" name="city" placeholder="City" style="width: 50%;" required>
+                      <input type="text" id="toadID" name="state" placeholder="State" style="width: 50%;" required>
+                    </div>
+                    <div class="address1">
+                      <input type="text" id="toadID" name="country" placeholder="Country" style="width: 50%;" required>
+                      <input type="text" id="toadID" name="zipcode" placeholder="Zipcode" style="width: 50%;" required>
+                    </div>
                     <input type="text" id="phoneInput" name="phone number" placeholder="Enter your phone number" required>
                     <input type="text" id="quantity" name="quantity" placeholder="Number of sockz to redeem" required>
-                    <input type="text" style="visibility: hidden" id="dateInput" name="date">
                     <input type="text" style="visibility: hidden" id="ethAdd" name="eth address">
+                    <input type="text" style="visibility: hidden" id="dateInput" name="date">
                   </form>
 
                   <div class="redeemButton" style="margin-top:-94px">
