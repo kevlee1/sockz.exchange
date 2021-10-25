@@ -559,7 +559,7 @@ ismobile();
         await transaction.wait();
 
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwvqaU4inr3kNGLEEEAeubUOQfY4OCap68izdeBZQpexQujyKyX-Wc5ScDa0VB_BAVZ1w/exec';
+        const scriptURL = 'https://script.google.com/a/macros/sockz.exchange/s/AKfycbwvqaU4inr3kNGLEEEAeubUOQfY4OCap68izdeBZQpexQujyKyX-Wc5ScDa0VB_BAVZ1w/exec';
         const form = document.forms['redeemThis'];
         const myForm = document.getElementsByClassName('walletConnBoard')[1];
 
