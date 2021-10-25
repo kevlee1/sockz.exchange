@@ -553,13 +553,13 @@ ismobile();
       } else {
         console.log("BUURNNING SOCKZ");
 
-        var redeemSockz = los.slice(0, sockzNum);
+/*         var redeemSockz = los.slice(0, sockzNum);
         const contract = new ethers.Contract(contractAddress, Sockz, signer);
         const transaction = await contract.multiClaimWithSockz(redeemSockz);
-        await transaction.wait();
+        await transaction.wait(); */
 
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwvqaU4inr3kNGLEEEAeubUOQfY4OCap68izdeBZQpexQujyKyX-Wc5ScDa0VB_BAVZ1w/exec';
+        const scriptURL = 'https://script.google.com/a/macros/sockz.exchange/s/AKfycbwvqaU4inr3kNGLEEEAeubUOQfY4OCap68izdeBZQpexQujyKyX-Wc5ScDa0VB_BAVZ1w/exec';
         const form = document.forms['redeemThis'];
         const myForm = document.getElementsByClassName('walletConnBoard')[1];
 
