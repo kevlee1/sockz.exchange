@@ -1215,6 +1215,10 @@ body{
 
 					/* Sell & Redeem buttons */
 
+					.address1{
+						display:flex;
+						max-width:342px
+					}
 					/*
 					.sellredeemDisabled{
 						display: flex;
@@ -1479,8 +1483,8 @@ body{
 				flex-direction: column;
 				height: 290px;
 				justify-content: space-between;
-				top: 63px;
-				left: 85px;
+				top: 58px;
+				left: 79px;
 				color:white;
 				word-wrap: break-word;
 		    width: 439px;
@@ -1502,19 +1506,21 @@ body{
 			}
 			.redeemForm input{
 				border:0;
-				border-bottom:2px solid white;
+				/* border-bottom:2px solid white; */
 				outline: none;
 				background: none;
 				color: white;
 				height: 31px;
 				width: 100%;
-				margin-right: 10px;
+				margin-right: 2px;
 				margin-top: 20px;
 				padding: 0;
 				color:whitesmoke;
 				font-family: 'Comic Neue';
 				font-size: 20px;
+				max-width:340px
 			}
+
 			.redeemForm input::placeholder{
 				color:whitesmoke;
 			}
@@ -1749,7 +1755,7 @@ body{
 				width:25%;
 			}
 			.redeemBckMobile{
-				width: 100% !important;
+				width: 100%;
 			}
 			.redeemtxtwrappera{
 				width:63%
@@ -1787,8 +1793,12 @@ body{
 			}
 			@media all and (max-width: 429px) and (min-height: 320px){
 
+
+				.redeemBckMobile{
+					width:100vw !important;
+				}
 				.sellredeem .redeeming .selltxt{
-					font-size: 19px !important;
+					/* font-size: 19	px !important; */
 				}
 
 				.infobck{
